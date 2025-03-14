@@ -16,8 +16,22 @@ function Home(){
         </nav>
         <a href="#" class="cta-button">Book Now</a>
     </header>
-
-   
+    <footer>
+    <div class="footer-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-copy">
+        &copy; 2024 Tourism Management System
+    </div>
+</footer>
+  
   </div>
     );
 }
