@@ -73,11 +73,54 @@ nav ul li a:hover {
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
+    width: 100vw; /* Forces full viewport width */
+    min-width: 100%; /* Ensures it stretches */
     background-color: #0d2440;
     color: white;
-    position: absolute;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
     bottom: 0;
-    width: 100%;
+    left: 0;
 }
+
+.footer-nav {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer-line {
+    width: 80%;
+    margin: 10px auto;
+    border-top: 1px solid gray;
+}
+
+.footer-copy {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
