@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 //Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5182" })); // Adjust frontend port if needed
+app.use(cors()); // Adjust frontend port if needed
 app.use("/vehicles",router);
 
 
