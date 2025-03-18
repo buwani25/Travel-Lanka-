@@ -1,10 +1,26 @@
 import Home from './Home.jsx';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import DashboardTMS from './transportMS/DashboardTMS.jsx';
+import Vehicle from './transportMS/Vehicle.jsx';
+import Vehicles from './transportMS/Vehicles.jsx';
+import Register from './transportMS/Register.jsx';
+import UpdateVehicle from './transportMS/UpdateVehicle.jsx';
+
 
 function App() {
   return (
-    <div>
-      <Home></Home>
-    </div>
+    <>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Route for Home page */}
+        <Route path="/DashboardTMS" element={<DashboardTMS />} /> {/* Route for Transport page */}
+        <Route path="/Vehicles" element={<Vehicles />} /> {/* Route for Transport page */}
+        <Route path="/Vehicle" element={<Vehicle />} /> {/* Route for Home page */}
+        <Route path="/Register" element={<Register />} /> {/* Route for Home page */}
+        <Route path="/Vehicles/:id" element={<UpdateVehicle />} />
+      </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
