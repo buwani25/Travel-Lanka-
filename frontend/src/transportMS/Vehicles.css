@@ -1,16 +1,55 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Vehicles.css */
+
+/* Table Styling */
+.vehicle-table {
+    width: 1400px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 250px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* Header Row Styling */
+.vehicle-header-row {
+    background: #212529;
+    color: white;
+    font-weight: bold;
+}
+
+/* Table Cells */
+.vehicle-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Row Styling */
+.vehicle-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Link Styling */
+.vehicle-link {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.vehicle-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width:100px;
+    height:38px;
+}
+.vehicle-link1 {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 header {
@@ -75,17 +114,15 @@ nav ul li a:hover {
 }
 
 footer {
-    width: 100vw; /* Forces full viewport width */
-    min-width: 100%; /* Ensures it stretches */
+    width: 100%;
     background-color: #0d2440;
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative;
+    position: relative; /* Changed from fixed to relative */
     bottom: 0;
     left: 0;
-    border-top: 1px solid #fffefe; /* You can change the color and thickness */
-    padding-bottom: 10px;
+    border-top: 1px solid #fffefe;
 }
 
 .footer-nav {
@@ -187,56 +224,28 @@ footer {
     width: 100%;
     
 }
-
-.dashboard-content {
-    margin-left: 220px; /* Leaves space for the sidebar */
-    padding: 20px;
-    width: 1430px; /* Remaining width */
-    display: flex;
-    flex-direction: column; /* STACK CONTENT VERTICALLY */
-    gap: 20px; /* Space between sections */
-}
-
-.dashboard-section {
-    margin-bottom: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.overview-metrics {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  
-}
-
-.metric-card {
-    background-color: #e9ecef;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    width: 200px;
-    margin-bottom: 15px;
-}
-
-.metric-card h3 {
-    margin-top: 0;
-    color: #0056b3;
-}
-
-.activity-list {
-    list-style: none;
-    padding: 0;
-}
-
-.activity-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
 h2{
-    margin-right: 350px;
+    margin-left: 300px;
+}
+.btn1{
+    margin-left: 1450px;
+}
+.dwnbtn{
+    margin-left: 250px;
+        margin-bottom: 80px; /* Adds spacing so button doesn't get hidden */
 }
 
+.searchb{
+    margin-left: 250px;
+    background-color: #f8f9fa;
+    height: 30px;
+    border-radius: 5px;
+}
+.searchb1{
+    margin-left: 20px;
+    font-size: 14px;
+    background-color: #a09c9c;
+}
+.headingg{
+    margin-left: 530px;
+}

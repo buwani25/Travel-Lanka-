@@ -25,6 +25,10 @@ const vehicleSchema = new Schema({
     FuelType:{
         type: String, //data type
         required:true, //validate
+    },
+    VehicleStatus:{
+        type: String, //data type
+        required:true, //validate
     }
 });
 

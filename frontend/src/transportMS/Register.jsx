@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Register.css"; // Import external CSS
 
 function Register() {
     const history = useNavigate();
@@ -11,6 +12,7 @@ function Register() {
         VehicleNumber: "",
         Capacity: "",
         FuelType: "",
+        VehicleStatus:"",
     });
 
     const handleChange = (e) => {
@@ -34,39 +36,67 @@ function Register() {
             VehicleNumber: String(inputs.VehicleNumber),
             Capacity: String(inputs.Capacity),
             FuelType: String(inputs.FuelType),
+            VehicleStatus: String(inputs.VehicleStatus),
         }).then((res) => res.data);
     };
 
     return (
         <div>
-            <h1>Add Vehicles</h1>
-            <form onSubmit={handleSubmit}>
+            <div class="container">
+             <header>
+        <div class="logo"><i>Travel Lanka</i></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-button">Logout</a>
+    </header>
+    <br></br>
+    </div>
+    <div class="form-container">
+            <h1>Register New Vehicle</h1>
+            <form onSubmit={handleSubmit} id="contactForm">
+            <div className="form-group">
                 <label>Vehicle ID</label>
-                <br />
-                <input type="text" name="VehicleID" onChange={handleChange} value={inputs.VehicleID} required />
-                <br />
+                <input type="text" name="VehicleID" className="I1" onChange={handleChange} value={inputs.VehicleID} required />
                 <label>Vehicle Type</label>
-                <br />
-                <input type="text" name="VehicleType" onChange={handleChange} value={inputs.VehicleType} required />
-                <br />
+                <input type="text" name="VehicleType" className="I1" onChange={handleChange} value={inputs.VehicleType} required />
                 <label>Model</label>
-                <br />
-                <input type="text" name="Model" onChange={handleChange} value={inputs.Model} required />
-                <br />
+                <input type="text" name="Model" className="I1" onChange={handleChange} value={inputs.Model} required />
                 <label>Vehicle Number</label>
-                <br />
-                <input type="text" name="VehicleNumber" onChange={handleChange} value={inputs.VehicleNumber} required />
-                <br />
+                <input type="text" name="VehicleNumber" className="I1" onChange={handleChange} value={inputs.VehicleNumber} required />
                 <label>Capacity</label>
-                <br />
-                <input type="text" name="Capacity" onChange={handleChange} value={inputs.Capacity} required />
-                <br />
+                <input type="text" name="Capacity" className="I1" onChange={handleChange} value={inputs.Capacity} required />
                 <label>Fuel Type</label>
-                <br />
-                <input type="text" name="FuelType" onChange={handleChange} value={inputs.FuelType} required />
-                <br />
+                <input type="text" name="FuelType" className="I1" onChange={handleChange} value={inputs.FuelType} required />
+                <label>Vehicle Status</label>
+                <input type="text" name="VehicleStatus" className="I1" onChange={handleChange} value={inputs.VehicleStatus} required />
+                <br></br>
+                <br></br>
                 <button type="submit">Register</button>
+                </div>
             </form>
+            </div>
+            <footer>
+    <div class="footer-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-copy">
+        &copy; 2024 Tourism Management System
+    </div>
+</footer>
         </div>
     );
 }
