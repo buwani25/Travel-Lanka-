@@ -19,7 +19,7 @@ function DashboardTMS(){
     <aside class="dashboard-sidebar">
             <nav>
                 <ul>
-                    <li><a href="#">Dashboard</a></li>
+                    <li><Link to="/DashboardTMS">Dashboard</Link></li>
                     <li><Link to="/Vehicle">Add Vehicle</Link></li>
                     <li><Link to="/Vehicles">Vehicles</Link></li>
                     <li><a href="#">Drivers</a></li>

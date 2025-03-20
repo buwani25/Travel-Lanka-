@@ -20,12 +20,12 @@ const getAllVehicles = async(req,res,next) =>{
 
 //data insert
 const addVehicles = async(req,res,next)=>{
-    const{VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType}=req.body;
+    const{VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType,VehicleStatus}=req.body;
 
     let vehicles;
 
     try{
-        vehicles = new Vehicle({VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType});
+        vehicles = new Vehicle({VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType,VehicleStatus});
         await vehicles.save();
     }catch(err){
         console.log(err);
@@ -61,13 +61,13 @@ const getByID = async (req,res,next)=>{
 const updateVehicle = async(req,res,next)=> {
 
     const id = req.params.id;
-    const{VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType}=req.body;
+    const{VehicleID,VehicleType,Model,VehicleNumber,Capacity,FuelType,VehicleStatus}=req.body;
 
     let vehicles;
 
     try{
         vehicles = await Vehicle.findByIdAndUpdate(id,
-            {VehicleID: VehicleID,VehicleType:VehicleType,Model:Model,VehicleNumber:VehicleNumber,Capacity:Capacity,FuelType:FuelType});
+            {VehicleID: VehicleID,VehicleType:VehicleType,Model:Model,VehicleNumber:VehicleNumber,Capacity:Capacity,FuelType:FuelType,VehicleStatus:VehicleStatus});
             vehicles = await vehicles.save();
     }catch(err){
         console.log(err);
