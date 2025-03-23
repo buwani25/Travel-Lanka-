@@ -1,0 +1,88 @@
+.main-content {
+    padding: 20px;
+    background-color: #f4f4f4;
+    
+}
+
+.main-content h3 {
+    font-size: 24px;
+    margin: 0;
+    flex-grow: 1;  /* Ensures the header takes up available space */
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures that the header and button are aligned vertically */
+    margin-bottom: 20px;
+}
+
+.hotel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.hotel-table th, .hotel-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.hotel-table th {
+    background-color: #0d2440;
+    color: white;
+}
+
+.hotel-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hotel-table tr:hover {
+    background-color: #ddd;
+}
+
+.add-hotel-btn {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px; /* Rounded corners */
+    margin-left: 20px; /* Space between header and button */
+}
+
+.update-btn {
+    border: none;
+    color: #0d2440;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #add8e6;
+}
+
+.delete-btn {
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.download-btn {
+    background-color: #add8e6;
+}
+
+.search-input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}

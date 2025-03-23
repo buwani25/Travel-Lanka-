@@ -6,6 +6,9 @@ import Vehicles from './transportMS/Vehicles.jsx';
 import Register from './transportMS/Register.jsx';
 import UpdateVehicle from './transportMS/UpdateVehicle.jsx';
 
+import Dashboard from './hotel/Dashboard.jsx';
+import HotelDisplay from './hotel/HotelDisplay.jsx';
+import HotelRegistrationForm from './hotel/HotelRegistrationForm.jsx';
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
         <Route path="/Vehicle" element={<Vehicle />} /> {/* Route for Home page */}
         <Route path="/Register" element={<Register />} /> {/* Route for Home page */}
         <Route path="/Vehicles/:id" element={<UpdateVehicle />} />
+
+        <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/hotels" element={<HotelDisplay/>}></Route>
+        <Route path="/registerhotel" element={<HotelRegistrationForm/>}></Route>
       </Routes>
       </BrowserRouter>
     </>
