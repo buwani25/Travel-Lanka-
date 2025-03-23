@@ -7,7 +7,7 @@
   
   body {
     background-color: #1a1a1a;
-    color: white;
+    color: rgb(255, 255, 255);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -126,3 +126,116 @@
   .explore-button {
     background-color: #e91e63;
   }  
+  .services-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #0d2440;
+    color: white;
+  }
+  
+  .services-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background: #ffcc00;
+    color: #0b2341;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    font-size: 14px;
+  }
+  .destinations-section {
+    text-align: center;
+    background-color:#0d2440 ;
+
+  }
+  
+  .destinations-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .destination-card {
+    background: #ffffff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .destination-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .topp{
+    color: aliceblue;
+    font-size: 30px;
+  }
+  .testimonials-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0d2440;
+  color: white;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background: #ffcc00;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  color:#1a1a1a;
+}
+
+.testimonial img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Newsletter */
+.newsletter {
+  text-align: center;
+  padding: 40px;
+  background: #f4f4f4;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: #e91e63;
+  color: white;
+  border: none;
+}
+.pic1{
+    height:350px;
+}
