@@ -65,6 +65,63 @@ function Home() {
           ))}
         </div>
       </div>
+      <div className="services-section">
+        <h2>Why Choose Us?</h2>
+        <div className="services-container">
+          <div className="service-card">
+            <h3>Best Destinations</h3>
+            <p>We offer the best travel destinations for your dream vacation.</p>
+          </div>
+          <div className="service-card">
+            <h3>Affordable Prices</h3>
+            <p>Get exclusive discounts and packages at the best rates.</p>
+          </div>
+          <div className="service-card">
+            <h3>24/7 Support</h3>
+            <p>Our team is available anytime to assist with your queries.</p>
+          </div>
+        </div>
+      </div>
+      <div className="destinations-section">
+        <h2 className="topp">Top Destinations</h2><br></br>
+        <div className="destinations-grid">
+          <div className="destination-card">
+            <img src="/Images/bg5.jpg" alt="Beach Paradise" />
+            <h3>Beach Paradise</h3>
+            <p>Relax on stunning white sand beaches with crystal-clear waters.</p>
+          </div>
+          <div className="destination-card">
+            <img src="/Images/bg6.jpg" className="pic1" alt="Mountain Escape" />
+            <h3>Mountain Escape</h3>
+            <p>Enjoy breathtaking views and adventurous hiking trails.</p>
+          </div>
+          <div className="destination-card">
+            <img src="/Images/bg7.jpg" className="pic1"  alt="Cultural Heritage" />
+            <h3>Cultural Heritage</h3>
+            <p>Explore ancient temples and vibrant traditions.</p>
+          </div>
+        </div>
+      </div>
+      <div className="testimonials-section">
+        <h2>What Our Customers Say</h2><br></br>
+        <div className="testimonials-container">
+          <div className="testimonial">
+            <img src="/Images/bg8.jpg" alt="User 1" />
+            <p>"An unforgettable journey! Everything was perfect."</p>
+            <h4>- Sarah W.</h4>
+          </div>
+          <div className="testimonial">
+            <img src="/Images/bg9.jpg" alt="User 2" />
+            <p>"Best travel agency ever! Highly recommend."</p>
+            <h4>- James L.</h4>
+          </div>
+        </div>
+      </div>
+      <div className="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
 
       <footer>
         <div className="footer-nav">
