@@ -10,6 +10,8 @@ export default function Dashboard(){
         advertisements: 15,
     });
 
+    const [customerRequests, setCustomerRequests] = useState([]);
+
     useEffect(() => {
       const fetchHotelCount = async() => {
         const response = await fetch("http://localhost:5000/api/hotels/hotel-count");
@@ -20,7 +22,14 @@ export default function Dashboard(){
         }))
       } 
 
+      // const fetchCustomerRequests = async() => {
+      //   const response = await fetch("http://localhost:5000/");
+      //   const data = await response.json();
+      //   setCustomerRequests(data);
+      // }
+
       fetchHotelCount();
+      // fetchCustomerRequests();
     },[]);
 
     return(
@@ -52,10 +61,12 @@ export default function Dashboard(){
             <li><a href="#">Reports</a></li>
           </ul>
         </div>
+
         <div className="main-content">
           <div className="header">
             <h1>Accommodation Dashboard</h1>
           </div>
+
           <h2 className="overview-header">Overview</h2>
           <div className="grid">
             <div className="card">
@@ -71,7 +82,18 @@ export default function Dashboard(){
               <p>Active Advertisements</p>
             </div>
           </div>
-          <h2 className="section-header">Recent Bookings</h2>
+
+          <h2 className="section-header">Customer Requests</h2>
+          <div className="customer-requests-grid">
+                    {customerRequests.map((request) => (
+                        <div className="customer-card" key={request.tripId}>
+                            <h3><strong>Trip ID:</strong> {request.tripId}</h3>
+                            <p><strong>Name:</strong> {request.customerName}</p>
+                            <p><strong>Destination:</strong> {request.destination}</p>
+                            <p><strong>Request Date:</strong> {request.date}</p>
+                        </div>
+                    ))}
+                </div>    
           
          </div>
 
