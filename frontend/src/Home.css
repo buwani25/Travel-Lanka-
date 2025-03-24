@@ -7,7 +7,7 @@
   
   body {
     background-color: #1a1a1a;
-    color: white;
+    color: rgb(255, 255, 255);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -126,5 +126,3 @@
   .explore-button {
     background-color: #e91e63;
   }  
-
-  
