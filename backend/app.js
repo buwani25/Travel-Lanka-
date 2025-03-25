@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routerTMS = require("./transportMS/RouteTMS/VehicleRoute");
 const routerHMS = require("./hotelMS/Routes/hotelRoute");
+const routerHB = require("./hotelMS/Routes/hotelBookingRoute");
 const app = express();
 const cors = require("cors");
 
@@ -11,6 +12,7 @@ app.use(cors()); // Adjust frontend port if needed
 app.use("/vehicles",routerTMS);
 app.use("/api/hotels",routerHMS);
 app.use("/hotels",routerHMS);
+app.use("/hotelBookings",routerHB);
 
 
 mongoose.connect("mongodb+srv://accomodation_manager:bVxLYSNd9K0mbBus@cluster0.dch3o.mongodb.net/tourism_management")
