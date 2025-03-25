@@ -1,0 +1,133 @@
+dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    position: flex;
+    top: 8px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.booking-button, .pending-button, .feedback-button {
+    background-color: rgb(233, 227, 56);
+    border: none;
+    padding: 13px 20px; /* Increased padding to make buttons larger */
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow for better focus */
+}
+
+.pending-button {
+   order: 1;
+}
+
+.tours-section {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center; /* Centers the section horizontally */
+    align-items: flex-start; /* Aligns it vertically in the center of the page */
+    flex-direction: column;
+    height: auto; /* Makes sure the section takes full height of the viewport */
+}
+
+.tours-section h2 {
+    color: black;
+    text-align: center; /* Centers the text */
+  }
+
+.tours-list {
+    display: flex;
+    justify-content: flex-start; /* Aligns items at the start of the container */
+    gap: 20px;
+    padding: 30px;
+    list-style-type: none;
+    width: 80%; /* Adjust to make the list responsive */
+    overflow-x: auto;
+    
+}
+
+.tour-item {
+    background-color: #213c6d; /* Dark background for the boxes */
+    padding: 30px;
+    border-radius: 8px;
+    width: 250px; /* Slightly wider boxes */
+    text-align: center;
+    color: rgb(16, 15, 15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-button:hover {
+    background-color: #45578d;
+    transform: scale(1.05);
+}
+
+.pending-button:hover {
+    background-color: #45578d;
+    transform: scale(1.05);
+}
+
+
+
+.footer {
+    width: 100vw; /* Forces full viewport width */
+    min-width: 100%; /* Ensures it stretches */
+    background-color: #0d2440;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.footer-nav {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer-line {
+    width: 80%;
+    margin: 10px auto;
+    border-top: 1px solid gray;
+}
+
+.footer-copy {
+    font-size: 14px;
+    opacity: 0.8;
+}

@@ -1,0 +1,49 @@
+.pending-tours-container {
+    padding: 20px;
+    background-color: #01011b;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #fdf5f5;
+  }
+  heading{
+    color: #ddd;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    color: #ddd;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: rgb(244, 249, 242);
+  }
+  
+  button {
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
+  }
+         
+  
+  button:hover {
+    background-color: #2196F3;
+    color: rgb(255, 255, 255);
+  }
+  
+  button:active {
+    background-color: #1e88e5;
+  }
+  

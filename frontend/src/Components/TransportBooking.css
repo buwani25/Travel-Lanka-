@@ -1,0 +1,84 @@
+/* Container for the transport booking form */
+.transport-form-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #020111;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+.form-title {
+  text-align: center;
+  color: #f4f1f7;
+  margin-bottom: 20px;
+}
+
+/* Tour ID display */
+.tour-id {
+  text-align: center;
+  color: #d1cfd6;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+/* Form styling */
+.transport-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group container */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+.form-label {
+  font-weight: bold;
+  color: #f6f8fd;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input fields */
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+/* Button styling */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Disabled button */
+.submit-button:disabled {
+  background-color: #999;
+}
+
+/* Success message */
+.success-message {
+  color: green;
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
