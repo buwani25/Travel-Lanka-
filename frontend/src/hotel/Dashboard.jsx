@@ -56,7 +56,7 @@ export default function Dashboard(){
           <ul>
             <li><a href="#">Dashboard</a></li>
             <li><Link to="/hotels">Hotels</Link></li>
-            <li><a href="#">Bookings</a></li>
+            <li><Link to="/hotelbookings"><a href="#">Bookings</a></Link></li>
             <li><a href="#">Advertisements</a></li>
             <li><a href="#">Reports</a></li>
           </ul>
@@ -84,7 +84,7 @@ export default function Dashboard(){
           </div>
 
           <h2 className="section-header">Customer Requests</h2>
-          <div className="customer-requests-grid">
+          {/* <div className="customer-requests-grid">
                     {customerRequests.map((request) => (
                         <div className="customer-card" key={request.tripId}>
                             <h3><strong>Trip ID:</strong> {request.tripId}</h3>
@@ -93,7 +93,7 @@ export default function Dashboard(){
                             <p><strong>Request Date:</strong> {request.date}</p>
                         </div>
                     ))}
-                </div>    
+                </div>     */}
           
          </div>
 

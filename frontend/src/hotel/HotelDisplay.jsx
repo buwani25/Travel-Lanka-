@@ -90,7 +90,7 @@ export default function HotelDisplay() {
           <ul>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li><a href="#">Hotels</a></li>
-            <li><a href="#">Bookings</a></li>
+            <li><Link to="/hotelbookings"><a href="#">Bookings</a></Link></li>
             <li><a href="#">Advertisements</a></li>
             <li><a href="#">Reports</a></li>
           </ul>
