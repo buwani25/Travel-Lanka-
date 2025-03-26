@@ -4,6 +4,8 @@ import "./Dashboard.css";
 
 export default function Dashboard(){
 
+     
+
     const [overview, setOverview] = useState({
         hotels: 0,
         pendingBookings: 35,
@@ -22,14 +24,14 @@ export default function Dashboard(){
         }))
       } 
 
-      // const fetchCustomerRequests = async() => {
-      //   const response = await fetch("http://localhost:5000/");
-      //   const data = await response.json();
-      //   setCustomerRequests(data);
-      // }
+      const fetchCustomerRequests = async() => {
+        const response = await fetch("http://localhost:5000/api/hotel-booking");
+        const data = await response.json();
+        setCustomerRequests(data);
+      }
 
       fetchHotelCount();
-      // fetchCustomerRequests();
+      fetchCustomerRequests();
     },[]);
 
     return(
@@ -83,17 +85,27 @@ export default function Dashboard(){
             </div>
           </div>
 
+          <br></br>
+
           <h2 className="section-header">Customer Requests</h2>
-          {/* <div className="customer-requests-grid">
-                    {customerRequests.map((request) => (
-                        <div className="customer-card" key={request.tripId}>
-                            <h3><strong>Trip ID:</strong> {request.tripId}</h3>
-                            <p><strong>Name:</strong> {request.customerName}</p>
-                            <p><strong>Destination:</strong> {request.destination}</p>
-                            <p><strong>Request Date:</strong> {request.date}</p>
-                        </div>
-                    ))}
-                </div>     */}
+          <br></br>
+          <div className="customer-requests">
+          {customerRequests.map((request, index) => (
+            <div className="customer-card" key={index}>
+              <h3>Tour ID: {request.tourId}</h3>
+              <p><strong>Destination 1:</strong> {request.firstDestination} ({new Date(request.firstFromDate).toLocaleDateString()} - {new Date(request.firstToDate).toLocaleDateString()})</p>
+              <p><strong>Destination 2:</strong> {request.secondDestination} ({new Date(request.secondFromDate).toLocaleDateString()} - {new Date(request.secondToDate).toLocaleDateString()})</p>
+              <p><strong>Guests:</strong> {request.adults} Adults, {request.children} Children</p>
+              <p><strong>Rooms:</strong> {request.rooms}</p>
+              <p><strong>Hotel Type:</strong> {request.hotelType}</p>
+              <p><strong>Budget:</strong> Rs.{request.budget}</p>
+
+              <button className="proceed-button" onClick={() => alert(`Proceeding with booking for Tour ID: ${request.tourId}`)}>
+                  Proceed
+              </button>
+            </div>
+          ))}
+        </div> 
           
          </div>
 

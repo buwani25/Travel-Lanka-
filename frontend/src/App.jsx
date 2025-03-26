@@ -17,6 +17,7 @@ import Dashboard from './hotel/Dashboard.jsx';
 import HotelDisplay from './hotel/HotelDisplay.jsx';
 import HotelRegistrationForm from './hotel/HotelRegistrationForm.jsx';
 import HotelBooking from './hotel/HotelBooking.jsx'
+import HotelBookingForm from './hotel/HotelBookingForm.jsx'
 
 import CusDashboard from './Components/CusDashboard.jsx';
 import CustomerDetails from './Components/CustomerDetails.jsx';
@@ -49,6 +50,7 @@ function App() {
         <Route path="/hotels" element={<HotelDisplay/>}></Route>
         <Route path="/registerhotel" element={<HotelRegistrationForm/>}></Route>
         <Route path="/hotelbookings" element={<HotelBooking/>}></Route>
+        <Route path="/hotelbookingform" element={<HotelBookingForm/>}></Route>
 
 
         <Route path="/CusDashboard" element={<CusDashboard />} />

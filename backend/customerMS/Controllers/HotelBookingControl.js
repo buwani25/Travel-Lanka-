@@ -1,4 +1,4 @@
-const HotelBooking = require('../Model/HotelBooking');
+const HotelBooking = require("../Model/HotelBooking");
 
 // Controller to handle hotel booking submission
 exports.addHotelBooking = async (req, res) => {

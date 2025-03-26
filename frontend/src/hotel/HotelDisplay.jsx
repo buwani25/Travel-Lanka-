@@ -6,6 +6,7 @@ import autoTable from "jspdf-autotable";
 import "./Dashboard.css";
 import "./HotelDisplay.css";
 
+
 const URL = "http://localhost:5000/hotels";
 
 const fetchHandler = async() => {
