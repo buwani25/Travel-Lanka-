@@ -14,7 +14,7 @@
 
 /* Sidebar styles */
 .sidebar {
-    width: 16vw;
+    width: 17vw;
     background-color: #0d2440;
     color: white;
     padding: 20px;
@@ -69,7 +69,7 @@
     padding: 20px;
     background-color: #ecf0f1;
     overflow-y: auto; 
-    margin-left: 16vw; /* Matches sidebar width */
+    margin-left: 19vw; /* Matches sidebar width */
 }
 
 /* Header styles inside the dashboard */
@@ -82,6 +82,7 @@
 
 .header h1 {
     font-size: 2.5rem;
+    
 }
 
 /* Grid styles */
@@ -132,7 +133,7 @@
     padding: 15px 0;
     background-color: #ecf0f1;
     border-radius: 5px;
-    
+    margin-right: 16vw;
 }
 
 header {
