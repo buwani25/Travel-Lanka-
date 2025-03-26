@@ -1,6 +1,7 @@
 import Home from './Home.jsx';
 import ContactUs from './ContactUs.jsx';
 import AboutUs from './AboutUs.jsx';
+import Destinations from './Destinations.jsx';
 
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardTMS from './transportMS/DashboardTMS.jsx';
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Home />} /> 
         <Route path="/contact-us" element={<ContactUs />} /> 
         <Route path="/about-us" element={<AboutUs />} /> 
+        <Route path="/Destination" element={<Destinations/>}/>
 
         <Route path="/DashboardTMS" element={<DashboardTMS />} /> 
         <Route path="/Vehicles" element={<Vehicles />} /> 

@@ -66,37 +66,35 @@ const HotelBookingForm = () => {
   };
 
   return (
-    <div className="hotel-form-container">
-      <form className="hotel-form" onSubmit={handleSubmit}>
-        <h2 className="form-title">Hotel Booking Form</h2>
-        <p className="tour-id">Tour ID: {tourId}</p>
+    <div className="hotel-booking-form-container">
+      <form className="hotel-booking-form" onSubmit={handleSubmit}>
+        <h2 className="hotel-form-title">Hotel Booking Form</h2>
+        <p className="hotel-tour-id">Tour ID: {tourId}</p>
 
-       
-
-        <label className="form-label">First Destination:</label>
+        <label className="hotel-form-label">First Destination:</label>
         <input
-          className="form-input"
+          className="hotel-form-input"
           type="text"
           value={firstDestination}
           onChange={(e) => setFirstDestination(e.target.value)}
           required
         />
 
-        <div className="form-group-row">
-          <div>
-            <label className="form-label">First Destination From:</label>
+        <div className="hotel-form-group-row">
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">First Destination From:</label>
             <input
-              className="form-input"
+              className="hotel-form-input"
               type="date"
               value={firstFromDate}
               onChange={(e) => setFirstFromDate(e.target.value)}
               required
             />
           </div>
-          <div>
-            <label className="form-label">First Destination To:</label>
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">First Destination To:</label>
             <input
-            className="form-input"
+              className="hotel-form-input"
               type="date"
               value={firstToDate}
               onChange={(e) => setFirstToDate(e.target.value)}
@@ -105,53 +103,53 @@ const HotelBookingForm = () => {
           </div>
         </div>
 
-        <label className="form-label">Second Destination:</label>
+        <label className="hotel-form-label">Second Destination:</label>
         <input
-          className="form-input"
+          className="hotel-form-input"
           type="text"
           value={secondDestination}
           onChange={(e) => setSecondDestination(e.target.value)}
-          required
+          
         />
 
-        <div className="form-group-row">
-          <div className="form-group">
-            <label className="form-label">Second Destination From:</label>
+        <div className="hotel-form-group-row">
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">Second Destination From:</label>
             <input
-              className="form-input"
+              className="hotel-form-input"
               type="date"
               value={secondFromDate}
               onChange={(e) => setSecondFromDate(e.target.value)}
-              required
+              
             />
           </div>
-          <div>
-            <label className="form-label">Second Destination To:</label>
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">Second Destination To:</label>
             <input
-            className="form-input"
+              className="hotel-form-input"
               type="date"
               value={secondToDate}
               onChange={(e) => setSecondToDate(e.target.value)}
-              required
+              
             />
           </div>
         </div>
 
-        <div className="form-group-row">
-          <div className="form-group">
-            <label className="form-label">Adults:</label>
+        <div className="hotel-form-group-row">
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">Adults:</label>
             <input
-              className="form-input"
+              className="hotel-form-input"
               type="number"
               value={adults}
               onChange={(e) => setAdults(e.target.value)}
               min="1"
             />
           </div>
-          <div>
-            <label className="form-label">Children:</label>
+          <div className="hotel-form-group">
+            <label className="hotel-form-label">Children:</label>
             <input 
-              className="form-input"
+              className="hotel-form-input"
               type="number"
               value={children}
               onChange={(e) => setChildren(e.target.value)}
@@ -160,18 +158,18 @@ const HotelBookingForm = () => {
           </div>
         </div>
 
-        <label className="form-label">Rooms:</label>
+        <label className="hotel-form-label">Rooms:</label>
         <input
-          className="form-input"
+          className="hotel-form-input"
           type="number"
           value={rooms}
           onChange={(e) => setRooms(e.target.value)}
           min="1"
         />
 
-        <label className="form-label">Hotel Type:</label>
+        <label className="hotel-form-label">Hotel Type:</label>
         <select
-          className="form-input"
+          className="hotel-form-input"
           value={hotelType}
           onChange={(e) => setHotelType(e.target.value)}
         >
@@ -181,25 +179,25 @@ const HotelBookingForm = () => {
           <option value="3-star">3 Star</option>
         </select>
 
-        <label className="form-label">Budget Per Night:</label>
+        <label className="hotel-form-label">Budget Per Night:</label>
         <input
-          className="form-input"
+          className="hotel-form-input"
           type="number"
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
           required
         />
 
-        <button className="submit-button" type="submit" disabled={loading}>
+        <button className="hotel-submit-button" type="submit" disabled={loading}>
           {loading ? 'Booking...' : 'Submit'}
         </button>
 
-        <button className="next-button" type="button" onClick={handleNext} disabled={loading}>
+        <button className="hotel-next-button" type="button" onClick={handleNext} disabled={loading}>
           Next
         </button>
 
-        {successMessage && <p className="success-message">{successMessage}</p>}
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {successMessage && <p className="hotel-success-message">{successMessage}</p>}
+        {errorMessage && <p className="hotel-error-message">{errorMessage}</p>}
       </form>
     </div>
   );

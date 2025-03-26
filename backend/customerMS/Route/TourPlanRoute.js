@@ -33,7 +33,7 @@ router.get('/tour/:tourId', async (req, res) => {
 
   try {
     const tourPlan = await TourPlan.find({ tourId });
-    console.log('Tour plan fetched:', tourPlan);
+    
 
     if (!tourPlan.length) {
       return res.status(404).json({ message: 'No tour plan found for this Tour ID' });
@@ -49,12 +49,13 @@ router.get('/tour/:tourId', async (req, res) => {
 // Update tour plan
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { firstDestination, firstFromDate, firstToDate, secondDestination, secondFromDate, secondToDate, tourGuide, guideLanguage } = req.body;
+  const {  tourGuide, guideLanguage } = req.body;
 
   try {
     const updatedTourPlan = await TourPlan.findByIdAndUpdate(
       id,
-      { firstDestination, firstFromDate, firstToDate, secondDestination, secondFromDate, secondToDate, tourGuide, guideLanguage: tourGuide === "Yes" ? guideLanguage : undefined },
+      { tourGuide,
+        guideLanguage: tourGuide === "Yes" ? guideLanguage : undefined,  },
       { new: true } // Return updated tour plan
     );
 

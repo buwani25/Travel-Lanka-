@@ -3,9 +3,10 @@ const router = express.Router();
 const Transport = require('../Model/transportBooking');  // Assuming the Transport model exists
 // Post route to handle transport booking
 router.post('/', async (req, res) => {
-  const { tourId, vehicleType, driverRequired } = req.body;
+  const { tourId, vehicleType, driverRequired,vehicleModel,numPassengers,specialRequirements} = req.body;
   try {
-    const newTransport = new Transport({ tourId, vehicleType, driverRequired });
+    const newTransport = new Transport({ tourId, vehicleType, driverRequired,vehicleModel,numPassengers,
+      specialRequirements });
     await newTransport.save();
     res.status(201).json({ success: true, transport: newTransport });
   } catch (err) {
@@ -33,12 +34,14 @@ router.get('/tour/:tourId', async (req, res) => {
 // Update transport
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { vehicleType, driverRequired } = req.body;
+  const { vehicleType, driverRequired ,vehicleModel,numPassengers,
+    specialRequirement} = req.body;
 
   try {
     const updatedTransport = await Transport.findByIdAndUpdate(
       id,
-      { vehicleType, driverRequired },
+      { vehicleType, driverRequired,vehicleModel,numPassengers,
+        specialRequirement },
       { new: true } // Return updated transport
     );
 

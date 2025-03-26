@@ -55,26 +55,26 @@ const TourPlanForm = () => {
       setLoading(false);
     }
   };
-
   return (
-    <div className="tour-plan-container">
+ 
+    <div className="tour-plan-form-container">
       <form onSubmit={handleSubmit} className="tour-plan-form">
-        <h2 className="form-title">Tour Plan</h2>
-        <p className="tour-id">Tour ID: {tourId}</p>
+        <h2 className="tour-plan-form-title">Tour Plan</h2>
+        <p className="tour-plan-id">Tour ID: {tourId}</p>
 
-        <label className="form-label">First Destination:</label>
+        <label className="tour-plan-input-label">First Destination:</label>
         <input
           type="text"
           name="firstDestination"
-          className="form-label"
+          className="tour-plan-input-field"
           value={formData.firstDestination}
           onChange={handleChange}
           required
         />
 
-        <div className="form-group-row">
-          <div className="form-group">
-            <label className="form-label">From:</label>
+        <div className="tour-plan-input-group">
+          <div className="tour-plan-date-group">
+            <label className="tour-plan-input-label">From:</label>
             <input
               type="date"
               name="firstFromDate"
@@ -83,12 +83,11 @@ const TourPlanForm = () => {
               required
             />
           </div>
-          <div className="form-group">
-            <label className="form-label">To:</label>
+          <div className="tour-plan-date-group">
+            <label className="tour-plan-input-label">To:</label>
             <input
               type="date"
               name="firstToDate"
-              className="form-input"
               value={formData.firstToDate}
               onChange={handleChange}
               required
@@ -96,54 +95,52 @@ const TourPlanForm = () => {
           </div>
         </div>
 
-        <label className="form-label">Second Destination:</label>
+        <label className="tour-plan-input-label">Second Destination:</label>
         <input
           type="text"
           name="secondDestination"
-          className="form-input"
+          className="tour-plan-input-field"
           value={formData.secondDestination}
           onChange={handleChange}
-          required
+          
         />
 
-        <div className="form-group-row">
-          <div className="form-group">
-            <label className="form-label">From:</label>
+        <div className="tour-plan-input-group">
+          <div className="tour-plan-date-group">
+            <label className="tour-plan-input-label">From:</label>
             <input
               type="date"
               name="secondFromDate"
-              className="form-input"
               value={formData.secondFromDate}
               onChange={handleChange}
-              required
+              
             />
           </div>
-          <div className="form-group">
-            <label className="form-label">To:</label>
+          <div className="tour-plan-date-group">
+            <label className="tour-plan-input-label">To:</label>
             <input
               type="date"
               name="secondToDate"
-              className="form-input"
               value={formData.secondToDate}
               onChange={handleChange}
-              required
+              
             />
           </div>
         </div>
 
-        <label className="form-label">Do you prefer a Tour Guide?</label>
-        <select name="tourGuide" className="form-select" value={formData.tourGuide} onChange={handleChange} required>
+        <label className="tour-plan-input-label">Do you prefer a Tour Guide?</label>
+        <select name="tourGuide" className="tour-plan-select-field" value={formData.tourGuide} onChange={handleChange} required>
           <option value="">Select</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
 
         {formData.tourGuide === "Yes" && (
-          <div className="form-group">
-            <label className="form-label">Preferred Guide Language:</label>
+          <div className="tour-plan-input-group">
+            <label className="tour-plan-input-label">Preferred Guide Language:</label>
             <select
               name="guideLanguage"
-              className="form-select"
+              className="tour-plan-select-field"
               value={formData.guideLanguage}
               onChange={handleChange}
               required
@@ -156,12 +153,12 @@ const TourPlanForm = () => {
           </div>
         )}
 
-        <button type="submit" className="submit-button" disabled={loading}>
+        <button type="submit" className="tour-plan-submit-button" disabled={loading}>
           {loading ? "Submitting..." : "Submit"}
         </button>
 
-        {successMessage && <p className="success-message">{successMessage}</p>}
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {successMessage && <p className="tour-plan-success-message">{successMessage}</p>}
+        {errorMessage && <p className="tour-plan-error-message">{errorMessage}</p>}
       </form>
     </div>
   );

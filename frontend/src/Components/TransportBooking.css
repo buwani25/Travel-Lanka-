@@ -1,84 +1,121 @@
-/* Container for the transport booking form */
-.transport-form-container {
-  max-width: 700px;
-  margin: 30px auto;
+.transport-container {
+  max-width: 800px;
+  margin: 50px auto ;
   padding: 20px;
-  background-color: #020111;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #020b24;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  color: white;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Form title */
-.form-title {
+/* Form Title */
+.transport-title {
   text-align: center;
-  color: #f4f1f7;
-  margin-bottom: 20px;
-}
-
-/* Tour ID display */
-.tour-id {
-  text-align: center;
-  color: #d1cfd6;
-  font-size: 1.1em;
+  font-size: 24px;
   margin-bottom: 15px;
 }
 
-/* Form styling */
+/* Tour ID */
+.transport-tour-id {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Success Message */
+.transport-message {
+  text-align: center;
+  color: #28a745;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Form */
 .transport-form {
   display: flex;
   flex-direction: column;
 }
 
-/* Form group container */
-.form-group {
+/* Form Group */
+.transport-group {
   margin-bottom: 15px;
 }
 
-/* Label styling */
-.form-label {
-  font-weight: bold;
-  color: #f6f8fd;
-  margin-bottom: 8px;
+/* Labels */
+.transport-label {
   display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #ddd;
 }
 
-/* Input fields */
-.form-input, .form-select {
+/* Input Fields */
+.transport-input,
+.transport-select,
+.transport-textarea {
   width: 100%;
   padding: 10px;
-  font-size: 1em;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #f8f8f8;
+  font-size: 14px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #fbf5f5;
+  color: rgb(9, 9, 9);
 }
 
-/* Button styling */
-.submit-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2em;
-  color: white;
-  background-color: #4caf50;
-  border: none;
-  border-radius: 4px;
+/* Textarea */
+.transport-textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Dropdown */
+.transport-select {
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
-.submit-button:hover {
-  background-color: #45a049;
+/* Submit Button */
+.transport-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: #0d6b04;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* Disabled button */
-.submit-button:disabled {
-  background-color: #999;
+.transport-button:hover {
+  background: #e65c00;
 }
 
-/* Success message */
-.success-message {
-  color: green;
-  text-align: center;
-  font-size: 1.1em;
-  margin-top: 10px;
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+  .transport-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .transport-title {
+    font-size: 20px;
+  }
+
+  .transport-label {
+    font-size: 14px;
+  }
+
+  .transport-input,
+  .transport-select,
+  .transport-textarea {
+    font-size: 13px;
+  }
+
+  .transport-button {
+    font-size: 14px;
+  }
 }

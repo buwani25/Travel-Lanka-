@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./PendingTours.css";
 
+
 const PendingTours = () => {
   const [pendingTours, setPendingTours] = useState([]);
   const [pendingTransport, setPendingTransport] = useState({}); // Store transport data per tour
@@ -24,6 +25,7 @@ const PendingTours = () => {
       response.data.forEach((tour) => {
         fetchPendingTransport(tour.tourId);
         fetchPendingHotelBooking(tour.tourId);
+        fetchPendingTourPlan(tour.tourId);
         
       });
     } catch (err) {
@@ -61,6 +63,7 @@ const PendingTours = () => {
    const fetchPendingTourPlan = async (tourId) => {
     try {
       const response = await axios.get(`http://localhost:5000/api/tour-plan/tour/${tourId}`);
+      
       setPendingTourPlan((prevState) => ({
         ...prevState,
         [tourId]: response.data,
@@ -115,6 +118,10 @@ const PendingTours = () => {
       await axios.put(`http://localhost:5000/api/transport/${editingTransport._id}`, {
         vehicleType: editingTransport.vehicleType,
         driverRequired: editingTransport.driverRequired,
+        vehicleModel: editingTransport.vehicleModel,
+        numPassengers:editingTransport.numPassengers,
+        specialRequirements:editingTransport.specialRequirements,
+        
       });
 
       alert("Transport details updated successfully!");
@@ -153,6 +160,14 @@ const PendingTours = () => {
       alert("Failed to update hotel booking details.");
     }
   };
+//update tour plan 
+const handleTourPlanChange = (e) => {
+  setEditingTourPlan({
+    ...editingTourPlan,
+    [e.target.name]: e.target.value,
+  });
+};
+
 
   const handleUpdateTourPlan = async (e) => {
     e.preventDefault();
@@ -195,8 +210,8 @@ const PendingTours = () => {
     setEditingHotelBooking(hotelBooking);
   };
 
-  const openUpdateTourPlan = (TourPlan) => {
-    setEditingHotelBooking(TourPlan);
+  const openUpdateTourPlanForm = (TourPlan) => {
+    setEditingTourPlan(TourPlan);
   };
 
 
@@ -208,15 +223,7 @@ const PendingTours = () => {
     setEditingTourPlan(null);
   };
 
-  // Delete customer details
-  const handleDeleteCustomer = async (id) => {
-    try {
-      await axios.delete(`http://localhost:5000/api/customers/${id}`);
-      fetchPendingTours(); // Refetch tours after deletion
-    } catch (err) {
-      console.error("Error deleting customer:", err);
-    }
-  };
+  
 
   // Delete transport details
   const handleDeleteTransport = async (transportId) => {
@@ -237,12 +244,12 @@ const PendingTours = () => {
       console.error("Error deleting hotel booking:", err);
     }
   };
-  const handleDeleteTourPlan= async (tourplanId) => {
+  const handleDeleteTourPlan = async (tourplanId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/hotel-booking/${tourplanId}`);
+      await axios.delete(`http://localhost:5000/api/tour-plan/${tourplanId}`);
       fetchPendingTours(); // Refetch hotel booking data after deletion
     } catch (err) {
-      console.error("Error deleting hotel booking:", err);
+      console.error("Error deleting tour plan booking:", err);
     }
   };
   useEffect(() => {
@@ -252,26 +259,26 @@ const PendingTours = () => {
   return (
     <div className="pending-tours-container">
       {/* Pending Tours Table */}
-      <h2>Pending Tours</h2>
-      <table className="table">
+      <h2 className="customer-details-h2">Customer Details</h2>
+      <table className="pending-tours-table">
         <thead>
           <tr>
-            <th>Tour ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Contact No</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th className="pending-tours-th">Tour ID</th>
+            <th className="pending-tours-th">First Name</th>
+            <th className="pending-tours-th">Last Name</th>
+            <th className="pending-tours-th">Contact No</th>
+            <th className="pending-tours-th">Email</th>
+            <th className="pending-tours-th">Actions</th>
           </tr>
         </thead>
         <tbody>
           {pendingTours.map((tour) => (
             <tr key={tour._id}>
-              <td>{tour.tourId}</td>
-              <td>{tour.firstName}</td>
-              <td>{tour.lastName}</td>
-              <td>{tour.contactNo}</td>
-              <td>{tour.email}</td>
+              <td className="pending-tours-td">{tour.tourId}</td>
+              <td className="pending-tours-td">{tour.firstName}</td>
+              <td className="pending-tours-td">{tour.lastName}</td>
+              <td className="pending-tours-td">{tour.contactNo}</td>
+              <td className="pending-tours-td">{tour.email}</td>
               <td>
                 <button onClick={() => openUpdateCustomerForm(tour)} className="update-button">
                   Update 
@@ -283,14 +290,17 @@ const PendingTours = () => {
       </table>
 
       {/* Pending Transport Table */}
-      <h2>Pending Transport</h2>
-      <table className="table">
+      <h2 className="pending-transport-h2">Pending Transport</h2>
+      <table className="pending-transport-table">
         <thead>
           <tr>
-            <th>Tour ID</th>
-            <th>Vehicle Type</th>
-            <th>Driver Required</th>
-            <th>Actions</th>
+            <th className="pending-transport-th">Tour ID</th>
+            <th className="pending-transport-th">Vehicle Type</th>
+            <th className="pending-transport-th">Driver Required</th>
+            <th className="pending-transport-th">Vehicle Model</th>
+            <th className="pending-transport-th">No.Passengers</th>
+            <th className="pending-transport-th">SpecialRequirements</th>
+            <th className="pending-transport-th">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -298,9 +308,13 @@ const PendingTours = () => {
             pendingTransport[tour.tourId] &&
             pendingTransport[tour.tourId].map((transport) => (
               <tr key={transport._id}>
-                <td>{tour.tourId}</td>
-                <td>{transport.vehicleType}</td>
-                <td>{transport.driverRequired ? "Yes" : "No"}</td>
+                <td className="pending-transport-td">{tour.tourId}</td>
+                <td className="pending-transport-td">{transport.vehicleType}</td>
+                <td className="pending-transport-td">{transport.driverRequired ? "Yes" : "No"}</td>
+                <td className="pending-transport-td">{transport.vehicleModel}</td>
+                <td className="pending-transport-td">{transport.numPassengers}</td>
+                <td className="pending-transport-td">{transport.specialRequirements}</td>
+                
                 <td>
                   <button onClick={() => openUpdateTransportForm(transport)} className="update-button">
                     Update 
@@ -316,18 +330,17 @@ const PendingTours = () => {
       </table>
 
       {/* Pending Hotel Booking Table */}
-      <h2>Pending Hotel Booking</h2>
+      <h2 className="pending-hotel-h2">Pending Hotel Booking</h2>
       <table className="pending-hotel-booking-table">
         <thead>
           <tr>
-            <th>Tour ID</th>
+            <th className="pending-hotel-th">Tour ID</th>
             
-            <th>Adults</th>
-            <th>Children</th>
-            <th>Rooms</th>
-            <th>HotelType</th>
-           
-            <th>Actions</th>
+            <th className="pending-hotel-th">HotelType</th>
+            <th className="pending-hotel-th">Adults</th>
+            <th className="pending-hotel-th">Children</th>
+            <th className="pending-hotel-th">Rooms</th>
+            <th className="pending-hotel-th">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -335,11 +348,11 @@ const PendingTours = () => {
             pendingHotelBooking[tour.tourId] &&
             pendingHotelBooking[tour.tourId].map((hotelBooking) => (
               <tr key={hotelBooking._id}>
-                <td>{tour.tourId}</td>
-                <td>{hotelBooking.hotelType}</td>
-                <td>{hotelBooking.adults}</td>
-                <td>{hotelBooking.children}</td>
-                <td>{hotelBooking.rooms}</td>
+                <td className="pending-hotel-td">{tour.tourId}</td>
+                <td className="pending-hotel-td">{hotelBooking.hotelType}</td>
+                <td className="pending-hotel-td">{hotelBooking.adults}</td>
+                <td className="pending-hotel-td">{hotelBooking.children}</td>
+                <td className="pending-hotel-td">{hotelBooking.rooms}</td>
                 <td>
                   <button onClick={() => openUpdateHotelBookingForm(hotelBooking)} className="update-button">
                     Update 
@@ -357,15 +370,15 @@ const PendingTours = () => {
       
 
       {/* Pending Tour Plan Table */}
-      <h2>Pending Tour Plan</h2>
+      <h2 className="pending-tour-plan-h2">Pending Tour Plan</h2>
       <table className="pending-tour-plan-table">
         <thead>
           <tr>
-            <th>Tour ID</th>
+            <th className="pending-tour-plan-th">Tour ID</th>
             
-            <th>Tour Guide</th>
-            <th>Guide Language</th>
-            <th>Actions</th>
+            <th className="pending-tour-plan-th" >Tour Guide</th>
+            <th className="pending-tour-plan-th">Guide Language</th>
+            <th className="pending-tour-plan-th">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -373,16 +386,14 @@ const PendingTours = () => {
             pendingTourPlan[tour.tourId] &&
             pendingTourPlan[tour.tourId].map((tourPlan) => (
               <tr key={tourPlan._id}>
-                <td>{tour.tourId}</td>
-                
-               
-                <td>{tourPlan.tourGuide ? "Yes" : "No"}</td>
-                <td>{tourPlan.guideLanguage || "N/A"}</td>
+                <td className="pending-tour-plan-td">{tour.tourId}</td>
+                <td className="pending-tour-plan-td">{tourPlan.tourGuide ? "Yes" : "No"}</td>
+                <td className="pending-tour-plan-td">{tourPlan.guideLanguage || "N/A"}</td>
                 <td>
                   <button onClick={() => openUpdateTourPlanForm(tourPlan)} className="update-button">
                     Update 
                   </button>
-                  <button onClick={() => openDeleteTourPlanForm(tourPlan)} className="delete-button">
+                  <button onClick={() =>handleDeleteTourPlan(tourPlan._id)} className="delete-button">
                     Delete
                   </button>
                 </td>
@@ -403,7 +414,7 @@ const PendingTours = () => {
         <div className="update-customer-form">
           <h2>Update Customer Details for Tour ID: {editingCustomer.tourId}</h2>
           <form onSubmit={handleUpdateCustomer}>
-            <div>
+            <div className="form-groups">
               <label>First Name:</label>
               <input
                 type="text"
@@ -412,7 +423,7 @@ const PendingTours = () => {
                 onChange={handleCustomerChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Last Name:</label>
               <input
                 type="text"
@@ -421,7 +432,7 @@ const PendingTours = () => {
                 onChange={handleCustomerChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Contact No:</label>
               <input
                 type="text"
@@ -430,7 +441,7 @@ const PendingTours = () => {
                 onChange={handleCustomerChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Email:</label>
               <input
                 type="email"
@@ -452,7 +463,7 @@ const PendingTours = () => {
         <div className="update-transport-form">
           <h2>Update Transport for Tour ID: {editingTransport.tourId}</h2>
           <form onSubmit={handleUpdateTransport}>
-            <div>
+            <div className="form-groups">
               <label>Vehicle Type:</label>
               <input
                 type="text"
@@ -461,7 +472,7 @@ const PendingTours = () => {
                 onChange={handleTransportChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Driver Required:</label>
               <select
                 name="driverRequired"
@@ -472,6 +483,26 @@ const PendingTours = () => {
                 <option value={true}>Yes</option>
               </select>
             </div>
+            <div className="form -groups">
+  <label>Vehicle Model:</label>
+  <input
+    type="text"
+    name="vehicleModel"
+    value={editingTransport.vehicleModel}
+    onChange={handleTransportChange}
+  />
+</div>
+
+<div className="form-groups"> 
+  <label>No of Passengers:</label>
+  <input
+    type="text"
+    name="numPassengers"
+    value={editingTransport.noOfPassengers}
+    onChange={handleTransportChange}
+  />
+</div>
+
             <button type="submit">Update Transport</button>
             <button type="button" onClick={closeUpdateForms}>
               Cancel
@@ -485,8 +516,8 @@ const PendingTours = () => {
         <div className="update-hotel-booking-form">
           <h2>Update Hotel Booking for Tour ID: {editingHotelBooking.tourId}</h2>
           <form onSubmit={handleUpdateHotelBooking}>
-            <div>
-              <label>Adults:</label>
+            <div className="form-groups"> 
+              <label className="adults">Adults:</label>
               <input
                 type="number"
                 name="adults"
@@ -494,7 +525,7 @@ const PendingTours = () => {
                 onChange={handleHotelBookingChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Children:</label>
               <input
                 type="number"
@@ -503,7 +534,7 @@ const PendingTours = () => {
                 onChange={handleHotelBookingChange}
               />
             </div>
-            <div>
+            <div className="form-groups">
               <label>Rooms:</label>
               <input
                 type="number"
@@ -526,80 +557,38 @@ const PendingTours = () => {
         <div className="update-tour-plan-form">
           <h2>Update Tour Plan for Tour ID: {editingTourPlan.tourId}</h2>
           <form onSubmit={handleUpdateTourPlan}>
-            <div>
-              <label>First Destination:</label>
-              <input
-                type="text"
-                name="firstDestination"
-                value={editingTourPlan.firstDestination}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>First From Date:</label>
-              <input
-                type="date"
-                name="firstFromDate"
-                value={editingTourPlan.firstFromDate}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>First To Date:</label>
-              <input
-                type="date"
-                name="firstToDate"
-                value={editingTourPlan.firstToDate}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>Second Destination:</label>
-              <input
-                type="text"
-                name="secondDestination"
-                value={editingTourPlan.secondDestination}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>Second From Date:</label>
-              <input
-                type="date"
-                name="secondFromDate"
-                value={editingTourPlan.secondFromDate}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>Second To Date:</label>
-              <input
-                type="date"
-                name="secondToDate"
-                value={editingTourPlan.secondToDate}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>Tour Guide:</label>
-              <input
-                type="text"
-                name="tourGuide"
-                value={editingTourPlan.tourGuide}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <div>
-              <label>Guide Language:</label>
-              <input
-                type="text"
-                name="guideLanguage"
-                value={editingTourPlan.guideLanguage}
-                onChange={handleTourPlanChange}
-              />
-            </div>
-            <button type="submit">Update Tour Plan</button>
-            <button type="button" onClick={closeUpdateForms}>Cancel</button>
+             {/* Tour Guide Selection */}
+      <div className="form-groups">
+        <label>Tour Guide:</label>
+        <select
+          name="tourGuide"
+          value={editingTourPlan.tourGuide}
+          onChange={handleTourPlanChange}
+        >
+          <option value="No">No</option>
+          <option value="Yes">Yes</option>
+        </select>
+      </div>
+
+      {/* Guide Language (Only enabled if Tour Guide is Yes) */}
+      <div className="form-groups">
+        <label>Guide Language:</label>
+        <select
+          type="text"
+          name="guideLanguage"
+          value={editingTourPlan.guideLanguage || ""}
+          onChange={handleTourPlanChange}
+          disabled={editingTourPlan.tourGuide !== "Yes"} // Disable if tourGuide is "No"
+        >
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Sinhala">Sinhala</option>
+          <option value="Tamil">Tamil</option>
+        </select>
+      </div>
+            
+            <button className="update-form-button" type="submit">Update Tour Plan</button>
+            <button className="cancel-button "type="button" onClick={closeUpdateForms}>Cancel</button>
           </form>
         </div>
       )}
