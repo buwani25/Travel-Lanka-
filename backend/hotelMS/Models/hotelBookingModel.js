@@ -32,7 +32,7 @@ const hotelBookingSchema = new Schema ({
     },
     PdfDocument: {  
         filename: { type: String, required: true },  // File name
-        pdfData: { type: Buffer, required: true },  // Store file as binary
+        // pdfData: { type: Buffer, required: true },  // Store file as binary
         contentType: { type: String, required: true }  // Example: "application/pdf"
     }
 })

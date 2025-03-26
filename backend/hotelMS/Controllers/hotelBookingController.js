@@ -1,9 +1,9 @@
-const multer = require('multer');
+// const multer = require('multer');
 const HotelBooking = require("../Models/hotelBookingModel");
 
 // Set up Multer storage (using memoryStorage for in-memory file storage)
-const storage = multer.memoryStorage(); // Files will be stored as Buffers
-const upload = multer({ storage: storage });
+// const storage = multer.memoryStorage(); // Files will be stored as Buffers
+// const upload = multer({ storage: storage });
 
 const getAllHotelBookings = async(req,res,next) => {
 
@@ -36,7 +36,7 @@ const addHotelBookings = async(req,res,next) => {
     // Create the PdfDocument object
     const newPdfDocument = {
         filename: pdfFile.originalname,    // The original file name
-        pdfData: pdfFile.buffer,           // The file data as a Buffer
+        // pdfData: pdfFile.buffer,           // The file data as a Buffer
         contentType: pdfFile.mimetype     // The MIME type of the file (e.g., "application/pdf")
     };
 
@@ -76,4 +76,6 @@ const deleteHotelBooking = async(req,res,next) => {
     return res.status(200).json({hotelBookings});
 }
 
-module.exports = {getAllHotelBookings,addHotelBookings: upload.single('PdfDocument'),deleteHotelBooking};
+// module.exports = {getAllHotelBookings,addHotelBookings: upload.single('PdfDocument'),deleteHotelBooking};
+module.exports = {getAllHotelBookings,addHotelBookings,deleteHotelBooking};
+

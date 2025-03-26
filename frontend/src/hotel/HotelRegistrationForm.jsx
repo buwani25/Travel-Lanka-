@@ -34,7 +34,7 @@ export default function HotelRegistrationForm() {
       if (!hotel.type) errorMessages.push("Select a hotel type");
       if (!hotel.email.match(/^\S+@\S+\.\S+$/)) errorMessages.push("Invalid email format");
       if (!hotel.phone.match(/^\d{10}$/)) errorMessages.push("Phone number must be 10 digits");
-      if (!hotel.description.trim()) errorMessages.push("Description is reuired");
+      if (!hotel.description.trim()) errorMessages.push("Description is reqired");
       if (hotel.rooms.length === 0) errorMessages.push("Atleast one room must be added");
 
       if (errorMessages.length > 0) {
@@ -98,9 +98,9 @@ export default function HotelRegistrationForm() {
 
     const sendRequest = async () => {
       await axios.post("http://localhost:5000/hotels", {
-        hotelName: hotel.name,  // Change "name" to "hotelName"
-        location: hotel.city,   // Change "city" to "location"
-        hotelType: hotel.type,  // Change "type" to "hotelType"
+        hotelName: hotel.name,  
+        location: hotel.city,   
+        hotelType: hotel.type,  
         description: hotel.description,
         rooms: hotel.rooms.map(room => ({
           roomType: room.type,
@@ -108,8 +108,8 @@ export default function HotelRegistrationForm() {
           numberOfRooms: Number(room.numberOfRooms),
         })),
         contactInfo: {
-          email: hotel.email,  // Nested under contactInfo
-          phone: hotel.phone   // Nested under contactInfo
+          email: hotel.email,  
+          phone: hotel.phone   
         }
       });
     };
