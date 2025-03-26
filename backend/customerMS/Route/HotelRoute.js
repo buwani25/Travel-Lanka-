@@ -83,4 +83,15 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Get all hotel bookings
+router.get('/', async (req, res) => {
+  try {
+    const hotelBookings = await HotelBooking.find();
+    res.status(200).json(hotelBookings);
+  } catch (err) {
+    console.error('Error fetching hotel bookings:', err);
+    res.status(500).json({ message: 'Error fetching hotel bookings.' });
+  }
+});
+
 module.exports = router;
