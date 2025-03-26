@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import "./UpdateVehicle.css"; // Import external CSS
+import "./UpdateVehicle.css"; 
 
 function UpdateVehicle() {
     const [inputs, setInputs] = useState({
@@ -14,16 +14,16 @@ function UpdateVehicle() {
         VehicleStatus:""
     });
 
-    const { id } = useParams(); // ✅ Correct way to extract id
+    const { id } = useParams(); 
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchHandler = async () => {
             try {
                 const res = await axios.get(`http://localhost:5000/vehicles/${id}`);
-                console.log("Fetched data:", res.data); // Debugging
+                console.log("Fetched data:", res.data); 
                 if (res.data.vehicle) {
-                    setInputs(res.data.vehicle); // ✅ Correct property name
+                    setInputs(res.data.vehicle); 
                 }
             } catch (error) {
                 console.error("Error fetching vehicle:", error);
@@ -70,10 +70,11 @@ function UpdateVehicle() {
                   <a href="#" class="cta-button">Logout</a>
           </header>
         </div>
+        <div class="form-wrapper">
         <div class="form-container">
             <h1>Update Vehicle</h1>
             {Object.keys(inputs).length === 0 ? (
-                <p>Loading...</p> // ✅ Prevents empty fields issue
+                <p>Loading...</p> 
             ) : (
                 <form onSubmit={handleSubmit} id="contactForm">
                     <div className="form-group">
@@ -106,12 +107,12 @@ function UpdateVehicle() {
                     <input type="text" name="VehicleStatus" className="I1" onChange={handleChange} value={inputs.VehicleStatus || ""} required />
                     <br></br>
                     <br></br>
-                    <button type="submit">Update</button>
+                    <button type="submit" className="subbb">Update</button>
                     </div>
                 </form>
             )}
             </div>
-            <div class="container">
+            </div>
             <footer>
     <div class="footer-nav">
         <ul>
@@ -128,7 +129,6 @@ function UpdateVehicle() {
     </div>
 </footer>
 </div>
-        </div>
     );
 }
 

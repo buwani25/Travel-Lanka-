@@ -20,10 +20,10 @@ function DashboardTMS(){
             <nav>
                 <ul>
                     <li><Link to="/DashboardTMS">Dashboard</Link></li>
-                    <li><Link to="/Vehicle">Add Vehicle</Link></li>
                     <li><Link to="/Vehicles">Vehicles</Link></li>
-                    <li><a href="#">Drivers</a></li>
+                    <li><Link to="/Drivers">Drivers</Link></li>
                     <li><a href="#">Bookings</a></li>
+                    <li><a href="#">Driver Allocations</a></li>
                     <li><a href="#">Maintenance</a></li>
                     <li><a href="#">Reports</a></li>
                 </ul>
@@ -31,7 +31,7 @@ function DashboardTMS(){
         </aside>
     <main class="dashboard-content">
             <section class="dashboard-section">
-                <h2>Overview</h2><br></br>
+                <h2 className='topics1'>Overview</h2><br></br>
                 <div class="overview-metrics">
                     <div class="metric-card">
                         <h3>Total Vehicles</h3>
@@ -49,12 +49,12 @@ function DashboardTMS(){
             </section>
 
             <section class="dashboard-section">
-                <h2>Vehicle Status</h2>
+                <h2 className='topics1'>Vehicle Status</h2>
                 <canvas id="vehicle-status-chart"></canvas>
             </section>
 
             <section class="dashboard-section">
-                <h2>Recent Activity</h2>
+                <h2 className='topics1'>Recent Activity</h2>
                 <ul class="activity-list">
                     <li>Vehicle #123 completed route A at 08:00.</li>
                     <li>Driver John Doe started route B at 09:15.</li>

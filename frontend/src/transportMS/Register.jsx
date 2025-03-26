@@ -56,7 +56,6 @@ function Register() {
         </nav>
         <a href="#" class="cta-button">Logout</a>
     </header>
-    <br></br>
     </div>
     <div class="form-container">
             <h1>Register New Vehicle</h1>
@@ -78,7 +77,7 @@ function Register() {
                 <input type="text" name="VehicleStatus" className="I1" onChange={handleChange} value={inputs.VehicleStatus} required />
                 <br></br>
                 <br></br>
-                <button type="submit">Register</button>
+                <button type="submit" className="Reg">Register</button>
                 </div>
             </form>
             </div>

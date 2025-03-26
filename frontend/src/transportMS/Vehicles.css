@@ -1,6 +1,3 @@
-/* Vehicles.css */
-
-/* Table Styling */
 .vehicle-table {
     width: 1400px;
     border-collapse: collapse;
@@ -8,26 +5,26 @@
     margin-left: 250px;
 }
 
-/* Header Row Styling */
+
 .vehicle-header-row {
     background: #212529;
     color: white;
     font-weight: bold;
 }
 
-/* Table Cells */
+
 .vehicle-table td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: left;
 }
 
-/* Row Styling */
+
 .vehicle-table tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 
-/* Link Styling */
+
 .vehicle-link {
     color: white;
     border: none;
@@ -35,7 +32,7 @@
     cursor: pointer;
 }
 
-/* Button Styling */
+
 .vehicle-button {
     background-color: #dc3545;
     color: white;
@@ -49,7 +46,9 @@
     color: white;
     border: none;
     padding: 5px 10px;
-    cursor: pointer;
+    width:100px;
+    height:48px;
+    background-color: #426bbe;
 }
 
 header {
@@ -64,16 +63,25 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid #fffefe; /* You can change the color and thickness */
+    border-bottom: 1px solid #fffefe;
     padding-bottom: 10px;
 }
 
 .container {
     width: 100%;
-    margin-top: 80px; /* Push content below fixed header */
+    margin-top: 80px;
     text-align: center;
 }
+.vehicle-table td {
+    color: #212529; 
+}
 
+.vehicle-table th {
+    background-color: #212529;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -119,7 +127,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative; /* Changed from fixed to relative */
+    position: relative;
     bottom: 0;
     left: 0;
     border-top: 1px solid #fffefe;
@@ -181,19 +189,18 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
-   
 }
 
 .dashboard-sidebar {
-    width: 230px;  /* Adjust width as needed */
-    height: 1000px; /* Full height of the screen */
-    position: fixed; /* Fix it to the left side */
+    width: 230px;
+    height: 1000px;
+    position: fixed;
     left: 0;
     top: 0;
     background-color: #0d2440;
     padding-top: 100px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     align-items: center;
     margin-top: 60px;
 }
@@ -203,15 +210,15 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers items */
+    flex-direction: column;
+    align-items: center;
 }
 
 .dashboard-sidebar nav ul li {
-    width: 100%; /* Ensure full width */
+    width: 100%;
     padding: 10px;
     border-bottom: 1px solid #ffffff;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 .dashboard-sidebar nav ul li a {
@@ -222,30 +229,142 @@ footer {
     text-decoration: none;
     transition: background 0.3s;
     width: 100%;
-    
-}
-h2{
-    margin-left: 300px;
-}
-.btn1{
-    margin-left: 1450px;
-}
-.dwnbtn{
-    margin-left: 250px;
-        margin-bottom: 80px; /* Adds spacing so button doesn't get hidden */
 }
 
-.searchb{
+h2 {
+    margin-left: 300px;
+}
+.btn1 {
+    margin-left: 1470px;
+    background-color: #163c6b;
+    color: #ffffff;
+    height:50px;
+}
+.dwnbtn {
+    margin-left: 250px;
+    margin-bottom: 80px;
+    background-color: #163c6b;
+    color: #ffffff;
+    height:50px;
+}
+
+.searchb {
     margin-left: 250px;
     background-color: #f8f9fa;
-    height: 30px;
-    border-radius: 5px;
+    height: 35px;
+
 }
-.searchb1{
+.searchb1 {
     margin-left: 20px;
     font-size: 14px;
     background-color: #a09c9c;
+    height: 35px;
+    color: #ffffff;
 }
-.headingg{
-    margin-left: 530px;
+.headinggg {
+    margin-left: 80px;
+    color: #212529;
+}
+
+
+
+@media screen and (max-width: 1440px) {
+    .btn1 {
+        margin-left: auto;
+        margin-right: 30px;
+    }
+
+    .vehicle-table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+
+    .searchb {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 90%;
+    }
+
+    .searchb1 {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .dwnbtn {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .vehicle-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn1,
+    .dwnbtn {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .searchb,
+    .searchb1 {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vehicle-table {
+        font-size: 12px;
+    }
+
+    .vehicle-table td {
+        padding: 6px;
+    }
+
+    .searchb,
+    .searchb1,
+    .btn1,
+    .dwnbtn {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
 }

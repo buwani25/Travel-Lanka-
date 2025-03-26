@@ -8,6 +8,10 @@ import Vehicle from './transportMS/Vehicle.jsx';
 import Vehicles from './transportMS/Vehicles.jsx';
 import Register from './transportMS/Register.jsx';
 import UpdateVehicle from './transportMS/UpdateVehicle.jsx';
+import Drivers from './transportMS/Drivers.jsx';
+import Driver from './transportMS/Driver.jsx';
+import AddDriver from './transportMS/AddDriver.jsx';
+import UpdateDriver from './transportMS/UpdateDriver.jsx';
 
 import Dashboard from './hotel/Dashboard.jsx';
 import HotelDisplay from './hotel/HotelDisplay.jsx';
@@ -22,24 +26,24 @@ import TourPlan from './Components/TourPlan.jsx';
 import PendingTours from './Components/PendingTours.jsx';
 
 
-
-
-
-
 function App() {
   return (
     <>
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Route for Home page */}
+        <Route path="/" element={<Home />} /> 
         <Route path="/contact-us" element={<ContactUs />} /> 
         <Route path="/about-us" element={<AboutUs />} /> 
 
-        <Route path="/DashboardTMS" element={<DashboardTMS />} /> {/* Route for Transport page */}
-        <Route path="/Vehicles" element={<Vehicles />} /> {/* Route for Transport page */}
-        <Route path="/Vehicle" element={<Vehicle />} /> {/* Route for Home page */}
-        <Route path="/Register" element={<Register />} /> {/* Route for Home page */}
+        <Route path="/DashboardTMS" element={<DashboardTMS />} /> 
+        <Route path="/Vehicles" element={<Vehicles />} /> 
+        <Route path="/Vehicle" element={<Vehicle />} /> 
+        <Route path="/Register" element={<Register />} /> 
         <Route path="/Vehicles/:id" element={<UpdateVehicle />} />
+        <Route path="/Drivers" element={<Drivers />} />
+        <Route path="/Driver" element={<Driver />} />
+        <Route path="/AddDriver" element={<AddDriver/>}/>
+        <Route path="/Drivers/:id" element={<UpdateDriver/>} />
 
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/hotels" element={<HotelDisplay/>}></Route>
