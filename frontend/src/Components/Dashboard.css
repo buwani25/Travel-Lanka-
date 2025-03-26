@@ -8,6 +8,7 @@ dashboard {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #0d2440;
 }
 
 .buttons {
@@ -59,7 +60,7 @@ dashboard {
 }
 
 .tour-item {
-    background-color: #213c6d; /* Dark background for the boxes */
+    background-color: #3d87ac; /* Dark background for the boxes */
     padding: 30px;
     border-radius: 8px;
     width: 250px; /* Slightly wider boxes */

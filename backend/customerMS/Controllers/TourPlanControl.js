@@ -15,9 +15,7 @@ exports.addTourPlan = async (req, res) => {
       guideLanguage
     } = req.body;
 
-    if (!firstDestination || !firstFromDate || !firstToDate || !secondDestination || !secondFromDate || !secondToDate) {
-      return res.status(400).json({ success: false, message: 'All required fields must be filled.' });
-    }
+   
 
     // Create a new tour plan object
     const newTourPlanData = new TourPlan({

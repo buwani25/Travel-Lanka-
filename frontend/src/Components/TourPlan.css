@@ -1,4 +1,5 @@
-.tour-plan-container {
+/* General Form Styling */
+.tour-plan-form-container {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
@@ -8,24 +9,21 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading styling */
-.tour-plan-title {
-  text-align: center;
+.tour-plan-form-title {
+  text-align: left;
   font-size: 1.8em;
   margin-bottom: 20px;
   color: #f5f6f7;
 }
 
-/* Tour ID paragraph */
-.tour-id {
+.tour-plan-id {
   text-align: center;
   font-size: 1.1em;
   color: #f5f6f7;
   margin-bottom: 15px;
 }
 
-/* Label styling */
-.tour-plan-label {
+.tour-plan-input-label {
   font-size: 1em;
   color: #f6f6f6;
   margin-bottom: 8px;
@@ -33,8 +31,8 @@
   font-weight: bold;
 }
 
-/* Input and select fields styling */
-.tour-plan-input, .tour-plan-select {
+.tour-plan-input-field,
+.tour-plan-select-field {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -43,8 +41,7 @@
   font-size: 1em;
 }
 
-/* Button styling */
-.tour-plan-button {
+.tour-plan-submit-button {
   width: 100%;
   padding: 15px;
   font-size: 1.2em;
@@ -56,17 +53,18 @@
   margin-top: 10px;
 }
 
-.tour-plan-button:hover {
+.tour-plan-submit-button:hover {
   background-color: #1e88e5;
 }
 
-.tour-plan-button:disabled {
+.tour-plan-submit-button:disabled {
   background-color: #b3cce6;
   cursor: not-allowed;
 }
 
 /* Success and error message styling */
-.success-message, .error-message {
+.tour-plan-success-message,
+.tour-plan-error-message {
   text-align: center;
   font-size: 1em;
   padding: 10px;
@@ -74,34 +72,34 @@
   margin-top: 10px;
 }
 
-.success-message {
+.tour-plan-success-message {
   background-color: #4caf50;
   color: white;
 }
 
-.error-message {
+.tour-plan-error-message {
   background-color: #f44336;
   color: white;
 }
 
 /* Styling for form groups with two inputs (like date ranges) */
-.form-group-row {
+.tour-plan-input-group {
   display: flex;
   justify-content: space-between;
 }
 
-.form-group-row .form-group {
+.tour-plan-date-group {
   width: 48%;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
-  .form-group-row {
-      flex-direction: column;
+  .tour-plan-input-group {
+    flex-direction: column;
   }
 
-  .form-group-row .form-group {
-      width: 100%;
-      margin-bottom: 10px;
+  .tour-plan-date-group {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
+

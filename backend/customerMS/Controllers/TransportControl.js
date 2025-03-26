@@ -1,15 +1,21 @@
-const TransportBooking = require('../Model/transportBooking');
+const TransportBooking = require('../Model/transportBookings');
 
 // Controller to handle transport booking submission
 exports.addTransportBooking = async (req, res) => {
   try {
-    const { tourId, vehicleType, driverRequired } = req.body;
+    const { tourId, vehicleType, driverRequired,vehicleModel,
+      numPassengers,
+      specialRequirements } = req.body;
 
     // Create a new transport booking object
     const newTransportBooking = new TransportBooking({
       tourId,
       vehicleType,
       driverRequired,
+      vehicleModel,
+      numPassengers,
+      specialRequirements,
+
     });
 
     // Save the transport booking to the database
@@ -26,6 +32,7 @@ exports.addTransportBooking = async (req, res) => {
     console.error('Error saving transport booking:', error);
     res.status(500).json({ success: false, message: 'Failed to save transport booking.' });
   }
+};
   exports.deleteTransportBooking = async (req, res) => {
     try {
       const transportId = req.params.transportId; // Capture transport ID from the URL parameter
@@ -48,4 +55,4 @@ exports.addTransportBooking = async (req, res) => {
       res.status(500).json({ success: false, message: 'Failed to delete transport.' });
     }
   };
-};
+

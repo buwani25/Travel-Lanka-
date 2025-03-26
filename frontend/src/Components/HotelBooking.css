@@ -1,69 +1,94 @@
 /* General container styling */
-.hotel-form-container {
+/* General Form Styling */
+.hotel-booking-form-container {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: #010a13;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-title {
+.hotel-form-title {
   text-align: center;
   font-size: 1.8em;
   margin-bottom: 20px;
   color: #f5f6f7;
 }
 
-.tour-id {
+.hotel-tour-id {
   text-align: center;
   color: #d1cfd6;
 }
 
-.form-label {
+.hotel-form-label {
   font-size: 1em;
-  color: #f6f6f6;
+  color: #efe3e3;
   font-weight: bold;
 }
 
-.form-input {
+.hotel-form-input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.form-group-row {
+.hotel-form-group-row {
   display: flex;
   justify-content: space-between;
 }
 
-.form-group {
+.hotel-form-group {
   width: 48%;
 }
 
-.submit-button, .next-button {
+.hotel-submit-button,
+.hotel-next-button {
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   font-size: 1.2em;
   color: white;
-  background-color: #2196F3;
+  background-color: #51ac2d;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.submit-button:hover, .next-button:hover {
+.hotel-submit-button:hover,
+.hotel-next-button:hover {
   background-color: #1e88e5;
 }
 
-.success-message {
+.hotel-success-message {
   background-color: #4caf50;
   color: white;
+  padding: 10px;
+  margin-top: 20px;
 }
 
-.error-message {
+.hotel-error-message {
   background-color: #f44336;
   color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hotel-form-group-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hotel-form-group {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hotel-submit-button, .hotel-next-button {
+    width: 100%;
+    margin-top: 15px;
+  }
 }

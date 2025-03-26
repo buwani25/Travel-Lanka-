@@ -1,49 +1,216 @@
-.pending-tours-container {
-    padding: 20px;
-    background-color: #01011b;
-    border-radius: 8px;
-  }
+/* Base Styles */
+.pending-tours-container{
+  background-color: rgb(3, 3, 23);
+}
+/* Table styling for Pending Hotel Booking */
+.pending-hotel-booking-table,
+.pending-tour-plan-table,
+.pending-transport-table,
+.pending-tours-table
+ {
+  width: 100%;
   
-  h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #fdf5f5;
-  }
-  heading{
-    color: #ddd;
-  }
+  margin-bottom: 20px;
+  background-color: #040118;
+}
+
+.pending-tours-td,
+.pending-hotel-td,
+.pending-tour-plan-td,
+.pending-transport-td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color:white;
+}
+ .pending-tours-th,
+.pending-hotel-th,
+.pending-tour-plan-th ,
+.pending-transport-th {
+  background-color: #35c02e;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color: #0c0c0c;
+}
+.pending-transport-h2,
+.pending-hotel-h2,
+.pending-tour-plan-h2,
+.customer-details-h2{
+  color: #ddd;
+ 
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.update-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Form styling */
+.update-customer-form,
+.update-transport-form,
+.update-hotel-booking-form,
+.update-tour-plan-form {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #040219;
+  border-radius: 10px;
+}
+
+.update-customer-form h2,
+.update-transport-form h2,
+.update-hotel-booking-form h2,
+.update-tour-plan-form h2 {
+  margin-bottom: 15px;
+  color: #ccc;
+}
+.update-customer-form td,
+.update-transport-form td,
+.update-hotel-booking-form td,
+.update-tour-plan-form td {
   
-  table {
+        color: #f2f2f2;
+}
+
+.update-customer-form {
+  margin-bottom: 10px;
+}
+.form-groups{
+  margin-bottom: 10px;
+}
+.form-groups label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f1ecec;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button[type="submit"] {
+  background-color: #199519;
+  color: white;
+}
+
+form button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Stack tables */
+  .pending-hotel-booking-table,
+  .pending-tour-plan-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    display: block;
+    overflow-x: auto;
   }
-  
-  th, td {
-    padding: 12px;
-    text-align: center;
-    color: #ddd;
-    border: 1px solid #ddd;
+
+  /* Form inputs and buttons */
+  .update-customer-form input,
+  .update-transport-form input,
+  .update-hotel-booking-form input,
+  .update-tour-plan-form input,
+  .update-customer-form select,
+  .update-transport-form select,
+  .update-hotel-booking-form select,
+  .update-tour-plan-form select,
+  .update-customer-form textarea,
+  .update-transport-form textarea,
+  .update-hotel-booking-form textarea,
+  .update-tour-plan-form textarea {
+    width: 100%;
   }
-  
-  th {
-    background-color: #4caf50;
-    color: rgb(244, 249, 242);
+
+  /* Buttons stacked vertically */
+  form button {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  button {
-    padding: 6px 12px;
-    margin: 5px;
-    cursor: pointer;
+
+  /* Adjust table for small screens */
+  .pending-hotel-booking-table td,
+  .pending-tour-plan-table td {
+    font-size: 14px;
   }
-         
-  
-  button:hover {
-    background-color: #2196F3;
-    color: rgb(255, 255, 255);
+
+  /* Table header adjustments for mobile */
+  .pending-hotel-booking-table th,
+  .pending-tour-plan-table th {
+    font-size: 16px;
   }
-  
-  button:active {
-    background-color: #1e88e5;
+  .pending-transport-table th{
+    background-color: #ccc;
   }
-  
+
+  /* Adjust h2 font size for smaller screens */
+  .update-customer-form h2,
+  .update-transport-form h2,
+  .update-hotel-booking-form h2,
+  .update-tour-plan-form h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust table text size */
+  .pending-hotel-booking-table td,
+  .pending-tour-plan-table td {
+    font-size: 12px;
+  }
+
+  .pending-hotel-booking-table th,
+  .pending-tour-plan-table th {
+    font-size: 14px;
+  }
+
+  /* Adjust form font size */
+  .update-customer-form input,
+  .update-transport-form input,
+  .update-hotel-booking-form input,
+  .update-tour-plan-form input,
+  .update-customer-form select,
+  .update-transport-form select,
+  .update-hotel-booking-form select,
+  .update-tour-plan-form select,
+  .update-customer-form textarea,
+  .update-transport-form textarea,
+  .update-hotel-booking-form textarea,
+  .update-tour-plan-form textarea {
+    font-size: 14px;
+  }
+
+  /* Adjust button size */
+  form button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+

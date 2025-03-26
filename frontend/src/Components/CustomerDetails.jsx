@@ -71,7 +71,9 @@ const CustomerDetailsForm = () => {
   return (
     <div className=" customer-form-container">
       <form className="customer-form" onSubmit={handleSubmit}>
-        <h2 className="customer-form-title" >{id ? 'Update Customer Details' : 'Customer Details'}</h2>
+      <div style={{ width: '100%', textAlign: 'center' }}>
+        <h2 className="customer-form-title" >{id ? 'Update Customer Details' : 'Customer Details Form'}</h2>
+        </div>
         <label className="form-label">First Name:</label>
         <input
           className='form-input'
