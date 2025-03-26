@@ -7,6 +7,7 @@ const customerRoutes = require('./customerMs/Route/customerRoute');
 const transportBookingRoutes = require('./customerMs/Route/TransportRoute'); // Corrected import name
 const hotelBookingRoutes = require('./customerMs/Route/HotelRoute');
 const tourPlanRoutes = require('./customerMs/Route/TourPlanRoute'); 
+const driverRoute=require("./transportMS/RouteTMS/driverRoute")
 
 const app = express();
 const cors = require("cors");
@@ -22,6 +23,7 @@ app.use('/api/transport', transportBookingRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/hotel-booking', hotelBookingRoutes);
 app.use('/api/tour-plan', tourPlanRoutes);
+app.use("/drivers",driverRoute);
 
 
 mongoose.connect("mongodb+srv://accomodation_manager:bVxLYSNd9K0mbBus@cluster0.dch3o.mongodb.net/tourism_management")

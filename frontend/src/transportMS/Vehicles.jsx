@@ -76,11 +76,11 @@ function Vehicles() {
           <aside class="dashboard-sidebar">
             <nav>
                 <ul>
-                    <li><Link to="/DashboardTMS">Dashboard</Link></li>
-                    <li><Link to="/Vehicle">Add Vehicle</Link></li>
+                <li><Link to="/DashboardTMS">Dashboard</Link></li>
                     <li><Link to="/Vehicles">Vehicles</Link></li>
-                    <li><a href="#">Drivers</a></li>
+                    <li><Link to="/Drivers">Drivers</Link></li>
                     <li><a href="#">Bookings</a></li>
+                    <li><a href="#">Driver Allocations</a></li>
                     <li><a href="#">Maintenance</a></li>
                     <li><a href="#">Reports</a></li>
                 </ul>
@@ -100,19 +100,19 @@ function Vehicles() {
                 <div><p>No users found</p></div>
             ):(
             <div ref={pdfRef} style={{ padding: "10px", backgroundColor: "#fff" }}>
-            <div className="headingg"><h2 >Vehicle Details</h2></div>
+            <div className="headinggg"><h2 className="headinggg" >Vehicle Details</h2></div>
             <table className="vehicle-table">
                 <tbody>
                     <tr className="vehicle-header-row">
-                        <td>#</td>
-                        <td>Vehicle ID</td>
-                        <td>Vehicle Type</td>
-                        <td>Model</td>
-                        <td>Vehicle Number</td>
-                        <td>Capacity</td>
-                        <td>Fuel Type</td>
-                        <td>VehicleStatus</td>
-                        <td>Actions</td>
+                        <th>#</th>
+                        <th>Vehicle ID</th>
+                        <th>Vehicle Type</th>
+                        <th>Model</th>
+                        <th>Vehicle Number</th>
+                        <th>Capacity</th>
+                        <th>Fuel Type</th>
+                        <th>VehicleStatus</th>
+                        <th>Actions</th>
                     </tr>
                     {vehicles.length > 0 ? (
                         vehicles.map((vehicle, index) => (

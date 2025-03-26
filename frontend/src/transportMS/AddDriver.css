@@ -1,19 +1,19 @@
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #edecec;
-    padding-bottom: 120px; 
+    background-color: #f4f4f4;
+    font-family: sans-serif;
 }
 
+/* Header */
 header {
     background-color: #0d2440;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,12 +21,7 @@ header {
     z-index: 1000;
     border-bottom: 1px solid #fffefe;
     padding-bottom: 10px;
-}
-
-.container1 {
-    width: 100%;
-    margin-top: 80px;
-    text-align: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -34,13 +29,18 @@ header {
     font-weight: bold;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -62,22 +62,33 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
+    margin-top: 10px;
 }
 
 .cta-button:hover {
     background-color: #e6b800;
 }
 
+/* Container below header */
+.container {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Footer */
 footer {
-    width: 100vw;                    
+    width: 100%;
     background-color: #0d2440;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    position: relative;             
+    padding: 20px 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     border-top: 1px solid #fffefe;
     z-index: 1000;
-    box-sizing: border-box;
 }
 
 .footer-nav {
@@ -87,15 +98,15 @@ footer {
 .footer-nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;                 
-    justify-content: center;        
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     padding: 0;
     margin: 0;
 }
 
 .footer-nav ul li {
-    display: inline-block;
+    display: inline;
 }
 
 .footer-nav ul li a {
@@ -120,11 +131,10 @@ footer {
     opacity: 0.8;
 }
 
-
+/* Dashboard */
 .dashboard-container {
     display: grid;
     grid-template-columns: 250px 1fr;
-    grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header header"
         "sidebar content"
@@ -132,17 +142,10 @@ footer {
     height: 100vh;
 }
 
-.dashboard-header {
-    grid-area: header;
-    background-color: #0056b3;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
+/* Sidebar */
 .dashboard-sidebar {
     width: 230px;
-    height: 1000px;
+    height: 100%;
     position: fixed;
     left: 0;
     top: 0;
@@ -152,6 +155,7 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
+    overflow-y: auto;
 }
 
 .dashboard-sidebar nav ul {
@@ -180,22 +184,20 @@ footer {
     width: 100%;
 }
 
-.form-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
-    padding: 40px 20px; 
-    min-height: auto; 
+/* Page title */
+h2 {
+    margin-left: 300px;
+    padding: 20px 10px;
 }
 
-
+/* Form styling */
 .form-container {
-    background-color: #ffffff;
+    background-color: #fff;
+    padding: 30px;
     border-radius: 12px;
-    width: 100%;
+    width: 90%;
     max-width: 500px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 100px auto;
 }
 
 .form-container h1 {
@@ -241,78 +243,63 @@ footer {
     height: 120px;
 }
 
+/* Submit button */
+.Reg {
+    background-color: rgb(86, 188, 77);
+    color: #fff;
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Background color class */
 .I1 {
     background-color: #e5e5e5;
-    width: 420px !important;
-}
-.subbb{
-    background-color: rgb(22, 194, 71);
-    color: #ffffff;
-    height: 40px;
-    width:150px;
-    margin-left: 130px;
 }
 
-
-@media screen and (max-width: 1024px) {
+/* Media Queries */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 15px 20px;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
     }
 
     .dashboard-sidebar {
-        display: none;
+        width: 100%;
+        position: relative;
+        margin-top: 0;
+        padding-top: 20px;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: center;
     }
 
-    .form-container {
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
-        margin-left: 600px;
+    .dashboard-sidebar nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .cta-button {
-        margin-top: 10px;
+    .dashboard-sidebar nav ul li {
+        width: auto;
+        border-bottom: none;
+        border-right: 1px solid #fff;
     }
 
-    .footer-nav ul {
-            flex-direction: column;
-            gap: 10px;
-        }
-    
-        .footer-copy {
-            font-size: 13px;
-        }
-
-}
-
-
-@media screen and (max-width: 600px) {
-    .logo {
-        font-size: 20px;
-    }
-
-    .form-container h1 {
-        font-size: 22px;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        font-size: 24px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    .footer-copy {
-        font-size: 12px;
+    h2 {
+        margin-left: 0;
+        text-align: center;
     }
 }
