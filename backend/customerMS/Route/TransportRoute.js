@@ -30,6 +30,16 @@ router.get('/tour/:tourId', async (req, res) => {
     res.status(500).json({ message: 'Error fetching transport.' });
   }
 });
+router.get('/', async (req, res) => {
+  try {
+    const bookings = await Transport.find(); 
+    console.log('All Transport Bookings:', bookings);
+    res.status(200).json(bookings);
+  } catch (err) {
+    console.error('Error fetching all transport bookings:', err);
+    res.status(500).json({ message: 'Error fetching all transport bookings' });
+  }
+});
 
 // Update transport
 router.put('/:id', async (req, res) => {

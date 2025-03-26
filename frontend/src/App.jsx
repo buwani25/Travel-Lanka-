@@ -13,6 +13,7 @@ import Drivers from './transportMS/Drivers.jsx';
 import Driver from './transportMS/Driver.jsx';
 import AddDriver from './transportMS/AddDriver.jsx';
 import UpdateDriver from './transportMS/UpdateDriver.jsx';
+import VehicleBooking from './transportMS/VehicleBooking.jsx'; 
 
 import Dashboard from './hotel/Dashboard.jsx';
 import HotelDisplay from './hotel/HotelDisplay.jsx';
@@ -47,6 +48,7 @@ function App() {
         <Route path="/Driver" element={<Driver />} />
         <Route path="/AddDriver" element={<AddDriver/>}/>
         <Route path="/Drivers/:id" element={<UpdateDriver/>} />
+        <Route path="/vehiclebookings" element={<VehicleBooking />} />
 
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/hotels" element={<HotelDisplay/>}></Route>
