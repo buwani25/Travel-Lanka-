@@ -1,0 +1,76 @@
+.vehicle-booking-container {
+    padding: 20px;
+  }
+  
+  .vehicle-booking-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #143666;
+  }
+  
+  .vehicle-card-container {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .vehicle-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .vehicle-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .vehicle-card-title {
+    color: #0d2440;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .vehicle-card p {
+    margin: 6px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .proceed-button {
+    margin-top: 16px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .proceed-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive tweak for smaller screens */
+  @media (max-width: 480px) {
+    .vehicle-card {
+      padding: 16px;
+    }
+  
+    .vehicle-card-title {
+      font-size: 18px;
+    }
+  
+    .vehicle-card p,
+    .proceed-button {
+      font-size: 14px;
+    }
+  }
+  

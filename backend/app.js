@@ -7,7 +7,8 @@ const customerRoutes = require('./customerMs/Route/customerRoute');
 const transportBookingRoutes = require('./customerMs/Route/TransportRoute'); // Corrected import name
 const hotelBookingRoutes = require('./customerMs/Route/HotelRoute');
 const tourPlanRoutes = require('./customerMs/Route/TourPlanRoute'); 
-const driverRoute=require("./transportMS/RouteTMS/driverRoute")
+const driverRoute=require("./transportMS/RouteTMS/driverRoute");
+
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/customers', customerRoutes);
 app.use('/api/hotel-booking', hotelBookingRoutes);
 app.use('/api/tour-plan', tourPlanRoutes);
 app.use("/drivers",driverRoute);
+app.use("/VehicleBooking",customerRoutes);
 
 
 
