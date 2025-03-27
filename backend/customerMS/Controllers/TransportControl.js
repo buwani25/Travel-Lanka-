@@ -5,7 +5,8 @@ exports.addTransportBooking = async (req, res) => {
   try {
     const { tourId, vehicleType, driverRequired,vehicleModel,
       numPassengers,
-      specialRequirements } = req.body;
+      specialRequirements,pickupDate,
+      dropoffDate  } = req.body;
 
     // Create a new transport booking object
     const newTransportBooking = new TransportBooking({
@@ -15,6 +16,8 @@ exports.addTransportBooking = async (req, res) => {
       vehicleModel,
       numPassengers,
       specialRequirements,
+      pickupDate,      // Add pickupDate
+      dropoffDate 
 
     });
 
@@ -52,7 +55,7 @@ exports.addTransportBooking = async (req, res) => {
       });
     } catch (error) {
       console.error('Error deleting transport:', error);
-      res.status(500).json({ success: false, message: 'Failed to delete transport.' });
+      res.status(500).json({ success:false, message: 'Failed to delete transport.' });
     }
   };
 

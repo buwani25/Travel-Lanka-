@@ -1,6 +1,6 @@
 /* Base Styles */
 .pending-tours-container{
-  background-color: rgb(3, 3, 23);
+  background-color: rgb(232, 232, 242);
 }
 /* Table styling for Pending Hotel Booking */
 .pending-hotel-booking-table,
@@ -27,7 +27,7 @@
 .pending-hotel-th,
 .pending-tour-plan-th ,
 .pending-transport-th {
-  background-color: #35c02e;
+  background-color: #538ee7;
   padding: 12px;
   text-align: left;
   border: 1px solid #ddd;
@@ -37,7 +37,7 @@
 .pending-hotel-h2,
 .pending-tour-plan-h2,
 .customer-details-h2{
-  color: #ddd;
+  color: #0d0d0d;
  
 }
 

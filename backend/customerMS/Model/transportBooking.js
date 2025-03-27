@@ -15,7 +15,9 @@ const transportBookingSchema = new mongoose.Schema({
   specialRequirements: { 
     type: String, 
     required: false // Optional field
-  }
+  },
+  pickupDate: { type: Date, required: true },
+  dropoffDate: { type: Date, required: true }
 
 });
 
