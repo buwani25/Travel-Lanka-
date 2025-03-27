@@ -1,7 +1,7 @@
 
 .customer-form-container {
-  width: 100%;
-  max-width: 500px;
+  width: 500%;
+  max-width: 600px;
   margin: 50px auto;
   padding: 25px;
   background-color: #0b132b;
@@ -41,7 +41,7 @@
   border-radius: 5px;
   font-size: 16px;
   width: 100%;
-  background-color: #e6e8ec;
+  background-color: #f9fbff;
   color: #1a1919;
 }
 

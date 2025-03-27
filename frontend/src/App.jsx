@@ -3,6 +3,7 @@ import ContactUs from './ContactUs.jsx';
 import AboutUs from './AboutUs.jsx';
 import Destinations from './Destinations.jsx';
 
+
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardTMS from './transportMS/DashboardTMS.jsx';
 import Vehicle from './transportMS/Vehicle.jsx';
@@ -28,6 +29,7 @@ import TourPlan from './Components/TourPlan.jsx';
 import PendingTours from './Components/PendingTours.jsx';
 
 
+
 function App() {
   return (
     <>
@@ -37,6 +39,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} /> 
         <Route path="/about-us" element={<AboutUs />} /> 
         <Route path="/Destination" element={<Destinations/>}/>
+        
 
         <Route path="/DashboardTMS" element={<DashboardTMS />} /> 
         <Route path="/Vehicles" element={<Vehicles />} /> 
@@ -62,6 +65,7 @@ function App() {
         <Route path="/Hotel/:tourId" element={<HotelBookingRequests />} />  
         <Route path="/Tour/:tourId" element={<TourPlan />} />  
         <Route path="/pendingtours" element={<PendingTours />} /> 
+        
       </Routes>
       </BrowserRouter>
     </>

@@ -113,6 +113,17 @@ const PendingTours = () => {
   // Update transport details
   const handleUpdateTransport = async (e) => {
     e.preventDefault();
+    // Check if pickupDate and dropoffDate are in the future
+  const currentDate = new Date().toISOString().split("T")[0];
+  
+  if (editingTransport.pickupDate < currentDate) {
+    alert("Pickup date cannot be in the past.");
+    return;
+  }
+  if (editingTransport.dropoffDate < currentDate) {
+    alert("Dropoff date cannot be in the past.");
+    return;
+  }
 
     try {
       await axios.put(`http://localhost:5000/api/transport/${editingTransport._id}`, {
@@ -121,7 +132,8 @@ const PendingTours = () => {
         vehicleModel: editingTransport.vehicleModel,
         numPassengers:editingTransport.numPassengers,
         specialRequirements:editingTransport.specialRequirements,
-        
+        pickupDate: editingTransport.pickupDate,
+        dropoffDate: editingTransport.dropoffDate,
       });
 
       alert("Transport details updated successfully!");
@@ -300,6 +312,8 @@ const handleTourPlanChange = (e) => {
             <th className="pending-transport-th">Vehicle Model</th>
             <th className="pending-transport-th">No.Passengers</th>
             <th className="pending-transport-th">SpecialRequirements</th>
+            <th className="pending-transport-th">Pickup Date</th>
+            <th className="pending-transport-th">Dropoff Date</th>
             <th className="pending-transport-th">Actions</th>
           </tr>
         </thead>
@@ -314,7 +328,15 @@ const handleTourPlanChange = (e) => {
                 <td className="pending-transport-td">{transport.vehicleModel}</td>
                 <td className="pending-transport-td">{transport.numPassengers}</td>
                 <td className="pending-transport-td">{transport.specialRequirements}</td>
-                
+                {/* Added Pickup Date */}
+          <td className="pending-transport-td">
+            {transport.pickupDate ? new Date(transport.pickupDate).toLocaleDateString() : "N/A"}
+          </td>
+
+          {/* Added Dropoff Date */}
+          <td className="pending-transport-td">
+            {transport.dropoffDate ? new Date(transport.dropoffDate).toLocaleDateString() : "N/A"}
+          </td>
                 <td>
                   <button onClick={() => openUpdateTransportForm(transport)} className="update-button">
                     Update 
@@ -503,6 +525,28 @@ const handleTourPlanChange = (e) => {
   />
 </div>
 
+{/* Add Pickup Date */}
+<div className="form-groups">
+        <label>Pickup Date:</label>
+        <input
+          type="date"
+          name="pickupDate"
+          value={editingTransport.pickupDate}
+          onChange={handleTransportChange}
+          min={new Date().toISOString().split("T")[0]} // Prevent past dates
+        />
+      </div>
+{/* Add Dropoff Date */}
+<div className="form-groups">
+        <label>Dropoff Date:</label>
+        <input
+          type="date"
+          name="dropoffDate"
+          value={editingTransport.dropoffDate}
+          onChange={handleTransportChange}
+          min={new Date().toISOString().split("T")[0]} // Prevent past dates
+        />
+      </div>
             <button type="submit">Update Transport</button>
             <button type="button" onClick={closeUpdateForms}>
               Cancel

@@ -3,10 +3,11 @@ const router = express.Router();
 const Transport = require('../Model/transportBooking');  // Assuming the Transport model exists
 // Post route to handle transport booking
 router.post('/', async (req, res) => {
-  const { tourId, vehicleType, driverRequired,vehicleModel,numPassengers,specialRequirements} = req.body;
+  const { tourId, vehicleType, driverRequired,vehicleModel,numPassengers,specialRequirements,pickupDate, dropoffDate} = req.body;
   try {
     const newTransport = new Transport({ tourId, vehicleType, driverRequired,vehicleModel,numPassengers,
-      specialRequirements });
+      specialRequirements ,pickupDate, 
+      dropoffDate });
     await newTransport.save();
     res.status(201).json({ success: true, transport: newTransport });
   } catch (err) {
@@ -35,13 +36,13 @@ router.get('/tour/:tourId', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
   const { vehicleType, driverRequired ,vehicleModel,numPassengers,
-    specialRequirement} = req.body;
+    specialRequirement,pickupDate, dropoffDate } = req.body;
 
   try {
     const updatedTransport = await Transport.findByIdAndUpdate(
       id,
       { vehicleType, driverRequired,vehicleModel,numPassengers,
-        specialRequirement },
+        specialRequirement,pickupDate, dropoffDate },
       { new: true } // Return updated transport
     );
 
