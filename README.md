@@ -1,58 +1,58 @@
-🌍 Tourism Management System – Travel Lanka
-📌 Project Overview
+🌍 **Tourism Management System – Travel Lanka**
+📌 **Project Overview**
 
 The Tourism Management System (TMS) is a web-based platform developed for Travel Lanka, a Sri Lankan travel company. It aims to digitize and streamline tourism operations, making it easier for customers to book and manage trips while helping staff handle operations more efficiently.
 
-✨ Key Features
+✨ **Key Features**
 👤 Customer Management
 
-User registration & login
+*User registration & login
 
-Trip booking, cancellation, and feedback
+*Trip booking, cancellation, and feedback
 
-Personalized itineraries & tour packages
+*Personalized itineraries & tour packages
 
-Real-time chat with staff
+*Real-time chat with staff
 
 🏨 Hotel Management
 
-Hotel registration & management
+*Hotel registration & management
 
-Accommodation booking with budget filters
+*Accommodation booking with budget filters
 
-Hotel promotions & advertisements
+*Hotel promotions & advertisements
 
 🚗 Transportation Management
 
-Vehicle & driver registration
+*Vehicle & driver registration
 
-Vehicle booking & assignment
+*Vehicle booking & assignment
 
-Real-time updates & alternative options
+*Real-time updates & alternative options
 
 🗺️ Route Planning & Tour Guide Management
 
-Route & itinerary planning
+*Route & itinerary planning
 
-Tour guide assignment with language preferences
+*Tour guide assignment with language preferences
 
-Real-time communication with tour planners
+*Real-time communication with tour planners
 
 👥 Staff Management
 
-Employee record management
+*Employee record management
 
-Trip budget planning with real-time updates
+*Trip budget planning with real-time updates
 
-Task allocation and monitoring
+*Task allocation and monitoring
 
-💡 Innovations
+💡 **Innovations**
 
-Sports Tourism – customizable packages for cricket, rugby, and volleyball teams
+*Sports Tourism – customizable packages for cricket, rugby, and volleyball teams
 
-Medical Tourism – services like physiotherapy, dental care, skin checkups, and ayurvedic treatments
+*Medical Tourism – services like physiotherapy, dental care, skin checkups, and ayurvedic treatments
 
-🎯 Project Objectives
+🎯 **Project Objectives**
 
 ✅ Streamline operations with automated booking & management
 
@@ -66,13 +66,13 @@ Medical Tourism – services like physiotherapy, dental care, skin checkups, and
 
 🛠️ Tech Stack
 
-Frontend: React.js
+**Frontend**: React.js
 
-Backend: Node.js + Express.js
+**Backend**: Node.js + Express.js
 
-Database: MongoDB
+**Database**: MongoDB
 
-Other Tools & Technologies:
+**Other Tools & Technologies**:
 
 🎨 Figma – UI/UX Design
 
