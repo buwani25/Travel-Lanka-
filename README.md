@@ -1,68 +1,68 @@
 🌍 Tourism Management System – Travel Lanka
 📌 Project Overview
 
-The Tourism Management System (TMS) is designed for Travel Lanka, a Sri Lankan travel company aiming to streamline its tourism operations. The system provides customers with a one-stop digital platform to book transportation, accommodation, and tours, while also supporting company staff in managing operations efficiently.
+The Tourism Management System (TMS) is a web-based platform developed for Travel Lanka, a Sri Lankan travel company. It aims to digitize and streamline tourism operations, making it easier for customers to book and manage trips while helping staff handle operations more efficiently.
 
+✨ Key Features
+👤 Customer Management
 
-✨ Features
+User registration & login
 
-Customer Management
+Trip booking, cancellation, and feedback
 
-User registration, trip booking, cancellation, and feedback
+Personalized itineraries & tour packages
 
-Personalized itineraries and tour packages
+Real-time chat with staff
 
-Real-time communication via chat system
+🏨 Hotel Management
 
-Hotel Management
-
-Hotel registration and management
+Hotel registration & management
 
 Accommodation booking with budget filters
 
-Hotel advertising and promotion through the system
+Hotel promotions & advertisements
 
-Transportation Management
+🚗 Transportation Management
 
 Vehicle & driver registration
 
-Vehicle booking and assignment
+Vehicle booking & assignment
 
-Real-time updates & alternative suggestions
+Real-time updates & alternative options
 
-Route Planning & Tour Guide Management
+🗺️ Route Planning & Tour Guide Management
 
-Route and itinerary planning
+Route & itinerary planning
 
 Tour guide assignment with language preferences
 
-Communication between customers and planners
+Real-time communication with tour planners
 
-Staff Management
+👥 Staff Management
 
 Employee record management
 
-Trip budget planning & real-time updates
+Trip budget planning with real-time updates
 
-Task allocation for staff
+Task allocation and monitoring
 
-Innovations
+💡 Innovations
 
-Sports Tourism – packages for cricket, rugby, and volleyball teams
+Sports Tourism – customizable packages for cricket, rugby, and volleyball teams
 
-Medical Tourism – physiotherapy, dental care, skin checkups, and ayurvedic treatments
+Medical Tourism – services like physiotherapy, dental care, skin checkups, and ayurvedic treatments
 
 🎯 Project Objectives
 
-Streamline operations with automated booking and management
+✅ Streamline operations with automated booking & management
 
-Enhance customer experience through personalized itineraries
+✅ Enhance customer experience through personalized itineraries
 
-Boost business growth & revenue with digital marketing and expanded reach
+✅ Boost business growth with digital marketing & outreach
 
-Promote sustainable tourism by managing visitor flow and supporting local communities
+✅ Promote sustainable tourism by managing visitor flow responsibly
 
-Enable real-time communication between customers and staff
+✅ Enable real-time communication between customers and staff
 
 🛠️ Tech Stack
 
@@ -72,12 +72,12 @@ Backend: Node.js + Express.js
 
 Database: MongoDB
 
-Other Tools:
+Other Tools & Technologies:
 
-Figma (UI/UX Design)
+🎨 Figma – UI/UX Design
 
-Mockflow & Draw.io (Wireframes & Use Case Diagrams)
+📝 Mockflow & Draw.io – Wireframes & Use Case Diagrams
 
-GitHub (Version Control)
+🖥️ Visual Studio Code – Development
 
-Visual Studio Code (Development)
+🔗 GitHub – Version Control
